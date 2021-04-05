@@ -1,4 +1,16 @@
 <resources>
     <string name="app_name">MySweetHome</string>
+    <string name="desc_button_front_desk">Front desk</string>
+    <string name="log_out">Log out</string>
+    <string name="task_allocation">Task allocation</string>
+    <string name="inspection">Inspection</string>
+    <string name="admin_menu">Admin menu</string>
+    <string name="desc_button_housekeeping">button housekeeping</string>
+    <string name="housekeeping">Housekeeping</string>
+    <string name="desc_button_task_allocation">task allocation</string>
+    <string name="desc_button_inspection">button inspection</string>
+    <string name="staff_menu">Staff menu</string>
+    <string name="btn_lost_found">lost and found</string>
+    <string name="btn_inspection">Inspection</string>
     <string name="todo">TODO</string>
 </resources>

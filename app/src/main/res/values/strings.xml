@@ -13,4 +13,9 @@
     <string name="btn_lost_found">lost and found</string>
     <string name="btn_inspection">Inspection</string>
     <string name="todo">TODO</string>
+    <string name="login">Login</string>
+    <string name="sign_up">Sign up</string>
+    <string name="selected_item">Selected item:</string>
+
+
 </resources>

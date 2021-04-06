@@ -44,6 +44,54 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.0"
             app:srcCompat="@drawable/imageedit_18_3429512413" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/Login"
+            android:layout_width="223dp"
+            android:layout_height="64dp"
+            android:layout_marginStart="83dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="83dp"
+            android:text="@string/login"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textDirection="firstStrongRtl"
+            android:textScaleX="3"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:backgroundTint="#F8EDD631"
+            app:chipSurfaceColor="#F8EDD631"
+            app:iconTint="#000000"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView6"
+            app:textEndPadding="1dp"
+            app:textStartPadding="1dp">
+
+        </com.google.android.material.chip.Chip>
+
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/Signup"
+            android:layout_width="223dp"
+            android:layout_height="64dp"
+            android:layout_marginStart="85dp"
+            android:layout_marginTop="36dp"
+            android:layout_marginEnd="83dp"
+            android:text="@string/sign_up"
+            android:textAlignment="center"
+            android:textDirection="firstStrongRtl"
+            android:textIsSelectable="false"
+            android:textScaleX="3"
+            android:textSize="36sp"
+            android:textStyle="bold"
+            app:chipSurfaceColor="#F8EDD631"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.437"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/Login"
+            app:textEndPadding="1dp"
+            app:textStartPadding="1dp" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

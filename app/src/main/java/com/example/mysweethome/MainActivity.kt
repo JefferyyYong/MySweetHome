@@ -19,8 +19,9 @@ import java.util.*
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        //setContentView(R.layout.activity_main)
-        setContentView(R.layout.customer_booking)
+        setContentView(R.layout.activity_main)
+        //setContentView(R.layout.customer_booking)
+        //setContentView(R.layout.lost_found_table)
 
 
         val mPickTimeBtn = findViewById<Button>(R.id.pickDateBtn)
@@ -73,5 +74,31 @@ class MainActivity : AppCompatActivity() {
 
 
         }
+
+
+        //For task allocation
+        val staffNames = arrayOf("John", "Lily")
+        val floorLevels = arrayOf("Floor1", "Floor2")
+        val spinnerStaff = findViewById<Spinner>(R.id.spinnerStaff)
+        val spinnerFloor = findViewById<Spinner>(R.id.spinnerFloor)
+        if (spinnerStaff != null && spinnerFloor != null) {
+            val arrayAdapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, personNames)
+            spinner.adapter = arrayAdapter
+
+            spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+                override fun onItemSelected(parent: AdapterView<*>, view: View, position: Int, id: Long) {
+                    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                    Toast.makeText(this@MainActivity, getString(R.string.ddl_staff) + " " + staffNames[position], Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this@MainActivity, getString(R.string.ddl_floor) + " " + floorLevels[position], Toast.LENGTH_SHORT).show()
+                }
+
+                override fun onNothingSelected(parent: AdapterView<*>) {
+                    // Code to perform some action when nothing is selected
+                }
+            }
+        }
+
+
+
     }
 }

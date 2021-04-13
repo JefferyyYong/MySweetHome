@@ -16,6 +16,17 @@
     <string name="login">Login</string>
     <string name="sign_up">Sign up</string>
     <string name="selected_item">Selected item:</string>
+    <string name="lost_and_found">Lost and Found</string>
 
+    <string name="ddl_staff">Staff</string>
+    <string name="ddl_floor">Floor</string>
+    <string name="remarks">Remarks:</string>
+    <string name="btn_submit">Submit</string>
+    <string name="lf_date">Date</string>
+    <string name="lf_item">Item</string>
+    <string name="lf_status">Status</string>
+    <string name="lf_add">Add</string>
+    <string name="lf_location">Location</string>
+    <string name="lf_edit">Edit</string>
 
 </resources>

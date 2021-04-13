@@ -20,6 +20,11 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        //loginChip.setOnClickListener{
+        //    val intent = Intent(this, AdminMenu::class.java)
+        //    startActivity(intent)
+        //}
+
         signUpChip.setOnClickListener{
             val intent = Intent(this, signUp::class.java)
             startActivity(intent)

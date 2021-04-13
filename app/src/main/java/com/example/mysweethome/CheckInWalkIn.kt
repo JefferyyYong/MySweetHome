@@ -4,17 +4,17 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
-import kotlin.math.sign
+import android.widget.ImageButton
 
-class signUp : AppCompatActivity() {
+class CheckInWalkIn : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.sign_up)
+        setContentView(R.layout.check_in_2)
 
-        val signUpForm = findViewById<Button>(R.id.signUpConBtn)
+        val checkWalkInBtn = findViewById<Button>(R.id.walkInNxt)
 
-        signUpForm.setOnClickListener {
-            val intent = Intent(this, login::class.java)
+        checkWalkInBtn.setOnClickListener {
+            val intent = Intent(this, CustomerDetails::class.java)
             startActivity(intent)
         }
     }

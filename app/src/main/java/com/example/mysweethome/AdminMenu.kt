@@ -10,11 +10,18 @@ class AdminMenu : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.admin_menu)
 
-        val test1 = findViewById<ImageView>(R.id.imgViewFrontDesk)
+        val toFrontDesk = findViewById<ImageView>(R.id.imgViewFrontDesk)
+        val toViewHousekeeping = findViewById<ImageView>(R.id.imgViewHousekeeping)
 
-        test1.setOnClickListener {
+        toFrontDesk.setOnClickListener {
             val intent = Intent(this, FrontDesk::class.java)
             startActivity(intent)
         }
+
+        toViewHousekeeping.setOnClickListener {
+            val intent = Intent(this, HousekeepingMenu::class.java)
+            startActivity(intent)
+        }
+
     }
 }

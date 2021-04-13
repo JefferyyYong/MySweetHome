@@ -4,7 +4,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context=".AdminTask">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar2"
@@ -60,17 +61,17 @@
         android:id="@+id/editTextTextMultiLine"
         android:layout_width="250dp"
         android:layout_height="150dp"
-        android:layout_marginBottom="160dp"
+        android:layout_marginBottom="156dp"
+        android:autofillHints=""
         android:background="#dff2fa"
         android:ems="10"
         android:gravity="start|top"
         android:inputType="textMultiLine"
+        android:labelFor="@id/editTextTextMultiLine"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.503"
-        app:layout_constraintStart_toStartOf="parent"
-        android:autofillHints=""
-        android:labelFor="@id/editTextTextMultiLine"/>
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/textView20"
@@ -90,13 +91,13 @@
         android:id="@+id/button7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="48dp"
         android:backgroundTint="#F2C94C"
         android:text="@string/btn_submit"
+        android:textColor="#000000"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:textColor="#000000"/>
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextMultiLine" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

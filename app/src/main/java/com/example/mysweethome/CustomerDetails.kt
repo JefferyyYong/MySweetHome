@@ -63,7 +63,7 @@ class CustomerDetails : AppCompatActivity() {
         }
 
         nxtBtn.setOnClickListener {
-            val intent = Intent(this, CheckOutMenu::class.java)
+            val intent = Intent(this, CheckInRoomStatus::class.java)
             startActivity(intent)
         }
     }

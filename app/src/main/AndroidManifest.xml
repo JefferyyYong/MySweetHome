@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MySweetHome">
-        <activity android:name=".AdminMenu"></activity>
+        <activity android:name=".ManageMenu2"></activity>
+        <activity android:name=".CheckOutMenu2" />
+        <activity android:name=".AdminMenu" />
         <activity android:name=".CheckInRoomStatus" />
         <activity android:name=".Reservation" />
         <activity android:name=".CustomerDetails" />

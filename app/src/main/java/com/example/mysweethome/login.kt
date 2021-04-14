@@ -19,7 +19,7 @@ class login : AppCompatActivity() {
 
         //loginButton.setOnClickListener {
         //    val intent = Intent(this, AdminMenu::class.java)
-        //    startActivity(intent)
+        //   startActivity(intent)
         //}
     }
 }

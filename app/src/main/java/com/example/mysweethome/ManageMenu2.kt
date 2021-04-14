@@ -5,20 +5,14 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 
-class CheckOutMenu : AppCompatActivity() {
+class ManageMenu2 : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.check_out_menu)
+        setContentView(R.layout.manage_menu2)
 
-        val yes = findViewById<Button>(R.id.selectBtn1)
-        val no = findViewById<Button>(R.id.selectBtn2)
+        val update = findViewById<Button>(R.id.updateBtn)
 
-        yes.setOnClickListener {
-            val intent = Intent(this, CheckOutMenu2::class.java)
-            startActivity(intent)
-        }
-
-        no.setOnClickListener {
+        update.setOnClickListener {
             val intent = Intent(this, FrontDesk::class.java)
             startActivity(intent)
         }

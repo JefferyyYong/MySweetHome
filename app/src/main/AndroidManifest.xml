@@ -19,7 +19,6 @@
         <activity android:name=".AdminMenu" />
         <activity android:name=".ManageMenu2"></activity>
         <activity android:name=".CheckOutMenu2" />
-        <activity android:name=".AdminMenu" />
         <activity android:name=".CheckInRoomStatus" />
         <activity android:name=".Reservation" />
         <activity android:name=".CustomerDetails" />
@@ -31,7 +30,7 @@
         <activity android:name=".FrontDesk" />
         <activity android:name=".login" />
         <activity android:name=".signUp" />
-        <activity android:name=".Login" />
+
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

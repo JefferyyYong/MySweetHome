@@ -3,8 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    >
+    android:orientation="vertical">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar2"
@@ -25,168 +24,192 @@
     </androidx.appcompat.widget.Toolbar>
 
     <TableLayout
-        android:layout_width="match_parent"
+        android:layout_width="276dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="50dp"
         android:layout_marginTop="100dp">
+
         <TableRow
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content">
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/lf_date"
-                android:padding="10dp"
-                android:background="@drawable/table_border"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/lf_location"
-                android:padding="10dp"
-                android:background="@drawable/table_border"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/lf_item"
-                android:padding="10dp"
                 android:background="@drawable/table_border"
-                />
+                android:padding="10dp"
+                android:text="@string/lf_date" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/lf_status"
+                android:background="@drawable/table_border"
                 android:padding="10dp"
-                android:background="@drawable/table_border"/>
+                android:text="@string/lf_location" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/table_border"
+                android:padding="10dp"
+                android:text="@string/lf_item" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/table_border"
+                android:padding="10dp"
+                android:text="@string/lf_status" />
         </TableRow>
 
         <!--Table content (Row 2)-->
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:padding="10dp"
-                android:background="@drawable/table_border"/>
+                android:background="@drawable/table_border"
+                android:padding="10dp" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:padding="10dp"
-                android:background="@drawable/table_border"/>
+                android:background="@drawable/table_border"
+                android:padding="10dp" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:padding="10dp"
-                android:background="@drawable/table_border"/>
+                android:background="@drawable/table_border"
+                android:padding="10dp" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:padding="10dp"
-                android:background="@drawable/table_border"/>
+                android:background="@drawable/table_border"
+                android:padding="10dp" />
         </TableRow>
 
         <!--Table content (Row 3)-->
         <TableRow
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content">
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:padding="10dp"
-                android:background="@drawable/table_border"/>
+                android:background="@drawable/table_border"
+                android:padding="10dp" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:padding="10dp"
-                android:background="@drawable/table_border"/>
+                android:background="@drawable/table_border"
+                android:padding="10dp" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:padding="10dp"
-                android:background="@drawable/table_border"/>
+                android:background="@drawable/table_border"
+                android:padding="10dp" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:padding="10dp"
-                android:background="@drawable/table_border"/>
+                android:background="@drawable/table_border"
+                android:padding="10dp" />
         </TableRow>
 
         <!--Table content (Row 4)-->
         <TableRow
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content">
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:padding="10dp"
-                android:background="@drawable/table_border"/>
+                android:background="@drawable/table_border"
+                android:padding="10dp" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:padding="10dp"
-                android:background="@drawable/table_border"/>
+                android:background="@drawable/table_border"
+                android:padding="10dp" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:padding="10dp"
-                android:background="@drawable/table_border"/>
+                android:background="@drawable/table_border"
+                android:padding="10dp" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:padding="10dp"
-                android:background="@drawable/table_border"/>
+                android:background="@drawable/table_border"
+                android:padding="10dp" />
         </TableRow>
 
         <!--Table content (Row 5)-->
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:padding="10dp"
-                android:background="@drawable/table_border"/>
+                android:background="@drawable/table_border"
+                android:padding="10dp" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:padding="10dp"
-                android:background="@drawable/table_border"/>
+                android:background="@drawable/table_border"
+                android:padding="10dp" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:padding="10dp"
-                android:background="@drawable/table_border"/>
+                android:background="@drawable/table_border"
+                android:padding="10dp" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:padding="10dp"
-                android:background="@drawable/table_border"/>
+                android:background="@drawable/table_border"
+                android:padding="10dp" />
         </TableRow>
 
         <!--Table content (Row 6)-->
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:padding="10dp"
-                android:background="@drawable/table_border"/>
+                android:background="@drawable/table_border"
+                android:padding="10dp" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:padding="10dp"
-                android:background="@drawable/table_border"/>
+                android:background="@drawable/table_border"
+                android:padding="10dp" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:padding="10dp"
-                android:background="@drawable/table_border"/>
+                android:background="@drawable/table_border"
+                android:padding="10dp" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:padding="10dp"
-                android:background="@drawable/table_border"/>
+                android:background="@drawable/table_border"
+                android:padding="10dp" />
         </TableRow>
     </TableLayout>
 

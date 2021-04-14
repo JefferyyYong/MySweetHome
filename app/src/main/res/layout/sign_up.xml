@@ -19,7 +19,7 @@
             android:id="@+id/usernameTxt"
             android:layout_width="match_parent"
             android:layout_height="54dp"
-            android:text="Username"
+            android:text="Name"
             android:textAlignment="center"
             android:textColor="@color/black"
             android:textSize="30sp" />
@@ -42,7 +42,7 @@
             android:textSize="30sp" />
 
         <EditText
-            android:id="@+id/password"
+            android:id="@+id/pass_edt_text"
             android:layout_width="321dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -76,7 +76,7 @@
             android:textSize="30sp" />
 
         <EditText
-            android:id="@+id/email"
+            android:id="@+id/email_edt_text"
             android:layout_width="341dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -86,7 +86,7 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/signUpConBtn"
+        android:id="@+id/signup_btn"
         android:layout_width="306dp"
         android:layout_height="51dp"
         android:layout_marginEnd="52dp"

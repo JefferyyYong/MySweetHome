@@ -28,5 +28,9 @@
     <string name="lf_add">Add</string>
     <string name="lf_location">Location</string>
     <string name="lf_edit">Edit</string>
+    <string name="check_in">Check-In</string>
+    <string name="check_out">Check-Out</string>
+    <string name="room_status">Room Status</string>
+    <string name="homepage">Homepage</string>
 
 </resources>

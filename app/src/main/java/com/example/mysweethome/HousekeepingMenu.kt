@@ -3,6 +3,7 @@ package com.example.mysweethome
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Button
 import android.widget.ImageView
 
 class HousekeepingMenu : AppCompatActivity() {
@@ -10,10 +11,13 @@ class HousekeepingMenu : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.housekeeping_menu)
 
+        setTitle("Housekeeping");
+
         //Admin
 
         val toTask = findViewById<ImageView>(R.id.imgViewTaskAllocation)
         val toInspect = findViewById<ImageView>(R.id.imgViewInspection)
+        val toLogout = findViewById<Button>(R.id.btnLogout)
 
         toTask.setOnClickListener {
             val intent = Intent(this, AdminTask::class.java)
@@ -22,6 +26,11 @@ class HousekeepingMenu : AppCompatActivity() {
 
         toInspect.setOnClickListener {
             val intent = Intent(this, InspectMenu::class.java)
+            startActivity(intent)
+        }
+
+        toLogout.setOnClickListener {
+            val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
     }

@@ -6,4 +6,95 @@
     android:layout_height="match_parent"
     tools:context=".InspectRoom">
 
+    <TextView
+        android:id="@+id/tvRoomNo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/room_no"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/spinnerRoomNo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.247"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tvStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/status"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/spinnerStatus"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.224"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Spinner
+        android:id="@+id/spinnerRoomNo"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="60dp"
+        android:background="#dff2fa"
+        app:layout_constraintBottom_toTopOf="@+id/tvStatus"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Spinner
+        android:id="@+id/spinnerStatus"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="52dp"
+        android:background="#dff2fa"
+        app:layout_constraintBottom_toTopOf="@+id/tvRemarks"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tvRemarks"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/remarks"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/editTextTextMultiLine"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.241"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/editTextTextMultiLine"
+        android:layout_width="250dp"
+        android:layout_height="150dp"
+        android:layout_marginBottom="160dp"
+        android:background="#dff2fa"
+        android:ems="10"
+        android:gravity="start|top"
+        android:inputType="textMultiLine"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintStart_toStartOf="parent"
+        android:autofillHints=""
+        android:labelFor="@id/editTextTextMultiLine"/>
+
+
+    <android.widget.Button
+        android:id="@+id/btnSubmit"
+        android:layout_width="130dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#F2C94C"
+        android:text="@string/btn_submit"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        android:background="@drawable/rounded_corners"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextMultiLine" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

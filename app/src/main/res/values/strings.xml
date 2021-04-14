@@ -28,5 +28,10 @@
     <string name="lf_add">Add</string>
     <string name="lf_location">Location</string>
     <string name="lf_edit">Edit</string>
+    <string name="room_no">Room No.:</string>
+    <string name="status">Status:</string>
+    <string name="floor">Floor:</string>
+    <string name="item">Item:</string>
+    <string name="date">Date:</string>
 
 </resources>

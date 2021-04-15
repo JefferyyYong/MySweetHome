@@ -10,7 +10,9 @@
         android:supportsRtl="true"
 
         android:theme="@style/Theme.MySweetHome">
-        <activity android:name=".InspectFloor"/>
+        <activity android:name=".LostFoundEdit"></activity>
+        <activity android:name=".LostFoundAdd" />
+        <activity android:name=".InspectFloor" />
         <activity android:name=".InspectRoom" />
         <activity android:name=".LostFound" />
         <activity android:name=".HkStaffMenu" />

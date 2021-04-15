@@ -23,7 +23,7 @@ class Login : AppCompatActivity() {
         //emailEt = findViewById(R.id.login_email)
         //passwordEt = findViewById(R.id.login_password)
 
-        loginBtn = findViewById(R.id.loginBtn)
+        //loginBtn = findViewById(R.id.loginBtn)
         //mAuth = FirebaseAuth.getInstance()
 
         loginBtn.setOnClickListener {
@@ -35,6 +35,8 @@ class Login : AppCompatActivity() {
             var password: String = passwordEt.text.toString()
             val sample1 = "jy97@gmail.com"
             val psample2 = "123456"
+            val adminSample ="cch97@gmail.com"
+
 
             if(TextUtils.isEmpty(email) || TextUtils.isEmpty(password)) {
                 Toast.makeText(this@Login, "Please fill all the fields", Toast.LENGTH_LONG).show()
@@ -52,9 +54,18 @@ class Login : AppCompatActivity() {
                             val intent = Intent(this, FrontDesk::class.java)
                             startActivity(intent)
                             finish()
+
                         } else {
+                            if (email == adminSample && password == psample2) {
+                                Toast.makeText(this, "Successfully Logged In", Toast.LENGTH_LONG)
+                                    .show()
+                                val intent = Intent(this, AdminMenu::class.java)
+                                startActivity(intent)
+                                finish()
+                            }else{
                             Toast.makeText(this, "Login Failed", Toast.LENGTH_LONG).show()
                         }
+                    }
                     }
                 })
             }

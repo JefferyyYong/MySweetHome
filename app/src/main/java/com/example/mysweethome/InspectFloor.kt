@@ -3,6 +3,8 @@ package com.example.mysweethome
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import android.view.View
 import android.widget.*
 
@@ -11,7 +13,12 @@ class InspectFloor : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.inspect_floor)
 
-        setTitle("Inspect by Floor");
+        //back button
+        val actionbar = supportActionBar
+        //back button
+        actionbar!!.title = "Inspect by Floor"
+        actionbar.setDisplayHomeAsUpEnabled(true)
+
 
         //Confirm floor level (total)
         val floorLvl = arrayOf("Floor", "Floor 1","Floor 2","Floor 3")
@@ -73,5 +80,43 @@ class InspectFloor : AppCompatActivity() {
             val intent = Intent(this, InspectMenu::class.java)
             startActivity(intent)
         }
+    }
+
+    //Side menu
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        menuInflater.inflate(R.menu.menu_2, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            R.id.Item1 -> {
+                val intent = Intent(this, FrontDesk::class.java)
+                startActivity(intent)
+                return true
+            }
+            R.id.Item2 ->{
+                val intent = Intent(this, HousekeepingMenu::class.java)
+                startActivity(intent)
+                return true
+            }
+            R.id.Item3 ->{
+                val intent = Intent(this, AdminTask::class.java)
+                startActivity(intent)
+                return true
+            }
+            R.id.Item4 ->{
+                val intent = Intent(this, InspectMenu::class.java)
+                startActivity(intent)
+                return true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
+    }
+
+    //back button
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return true
     }
 }

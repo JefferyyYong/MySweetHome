@@ -4,6 +4,8 @@ import android.app.DatePickerDialog
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import android.view.View
 import android.widget.*
 import com.google.firebase.database.FirebaseDatabase
@@ -21,7 +23,12 @@ class LostFoundAdd : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.lost_found_add)
 
-        setTitle("Lost and Found - Add");
+        //back button
+        val actionbar = supportActionBar
+        //back button
+        actionbar!!.title = "Lost and Found - Add"
+        actionbar.setDisplayHomeAsUpEnabled(true)
+
 
         //DB use
         etLocation = findViewById<EditText>(R.id.etLocation)
@@ -77,8 +84,6 @@ class LostFoundAdd : AppCompatActivity() {
 
         toProceed.setOnClickListener {
             saveLostFound()
-            val intent = Intent(this, LostFoundTable::class.java)
-            startActivity(intent)
         }
 
     }
@@ -118,13 +123,42 @@ class LostFoundAdd : AppCompatActivity() {
         //to generate a unique key
         val lfId = ref.push().key
 
-        val lf = DBLostFound(lfId.toString(), date, location, item, sStatus)
-        //val lf = LostFound(lfId.toString(), date, item, sStatus)
-        //val lf = LostFound(lfId.toString(), date)
+        val lf = LostFound(lfId.toString(), date, location, item, sStatus)
 
         ref.child(lfId.toString()).setValue(lf).addOnCompleteListener{
             Toast.makeText(applicationContext, "New lost found item saved successfully", Toast.LENGTH_LONG).show()
+            val intent = Intent(this, LostFoundTable::class.java)
+            startActivity(intent)
         }
     }
-    //
+
+
+    //Side menu
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        menuInflater.inflate(R.menu.menu_3, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            R.id.Item1 -> {
+                val intent = Intent(this, HkStaffMenu::class.java)
+                startActivity(intent)
+                return true
+            }
+            R.id.Item2 ->{
+                val intent = Intent(this, LostFoundTable::class.java)
+                startActivity(intent)
+                return true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
+    }
+
+    //back button
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return true
+    }
+
 }

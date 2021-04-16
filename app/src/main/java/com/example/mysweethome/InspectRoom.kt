@@ -6,6 +6,8 @@ import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
+import android.view.Menu
+import android.view.MenuItem
 import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
@@ -18,7 +20,11 @@ class InspectRoom : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.inspect_room)
 
-        setTitle("Inspect by Room");
+        //back button
+        val actionbar = supportActionBar
+        //back button
+        actionbar!!.title = "Inspect by Room"
+        actionbar.setDisplayHomeAsUpEnabled(true)
 
         //The room no. need to get from database?
         val roomNo = arrayOf("101","102","103","201","202", "203", "301","302","303","401","402", "403")
@@ -62,5 +68,43 @@ class InspectRoom : AppCompatActivity() {
             val intent = Intent(this, InspectMenu::class.java)
             startActivity(intent)
         }
+    }
+
+    //Side menu
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        menuInflater.inflate(R.menu.menu_2, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            R.id.Item1 -> {
+                val intent = Intent(this, FrontDesk::class.java)
+                startActivity(intent)
+                return true
+            }
+            R.id.Item2 ->{
+                val intent = Intent(this, HousekeepingMenu::class.java)
+                startActivity(intent)
+                return true
+            }
+            R.id.Item3 ->{
+                val intent = Intent(this, AdminTask::class.java)
+                startActivity(intent)
+                return true
+            }
+            R.id.Item4 ->{
+                val intent = Intent(this, InspectMenu::class.java)
+                startActivity(intent)
+                return true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
+    }
+
+    //back button
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return true
     }
 }

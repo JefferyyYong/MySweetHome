@@ -16,7 +16,8 @@ class MainActivity : AppCompatActivity() {
 
 
         loginChip.setOnClickListener{
-            val intent = Intent(this, Login::class.java)
+             val intent = Intent(this, Login::class.java)
+            //val intent = Intent(this, CustomerDetails::class.java)
             startActivity(intent)
         }
 

@@ -154,38 +154,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView12" />
 
-    <TextView
-        android:id="@+id/sample"
-        android:layout_width="167dp"
-        android:layout_height="39dp"
-        android:layout_marginTop="10dp"
-        android:textAlignment="viewEnd"
-        android:textColor="@color/black"
-        android:textColorHint="#FFFFFF"
-        android:textSize="20sp"
-        android:translationX="21sp"
-        android:translationY="300sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textView18"
-        app:layout_constraintTop_toBottomOf="@+id/textView12" />
-
-    <TextView
-        android:id="@+id/sample2"
-        android:layout_width="167dp"
-        android:layout_height="39dp"
-        android:layout_marginTop="50dp"
-        android:textAlignment="viewEnd"
-        android:textColor="@color/black"
-        android:textColorHint="#FFFFFF"
-        android:textSize="20sp"
-        android:translationX="21sp"
-        android:translationY="300sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sample" />
-
     <EditText
-        android:id="@+id/editTextNumber"
+        android:id="@+id/paxNo"
         android:layout_width="50sp"
         android:layout_height="60sp"
         android:ems="10"
@@ -195,40 +165,43 @@
         app:layout_constraintStart_toEndOf="@+id/textView15"
         tools:layout_editor_absoluteY="435dp" />
 
-    <EditText
-        android:id="@+id/editTextNumber2"
+    <TextView
+        android:id="@+id/price"
         android:layout_width="80sp"
         android:layout_height="60sp"
         android:ems="10"
         android:inputType="number"
+        android:textColor="@color/black"
+        android:textSize="18sp"
         android:translationX="30sp"
-        android:translationY="310sp"
+        android:translationY="325sp"
         app:layout_constraintStart_toEndOf="@+id/textView16"
-        tools:layout_editor_absoluteY="435dp" />
-
-    <EditText
-        android:id="@+id/editTextNumber3"
-        android:layout_width="80sp"
-        android:layout_height="60sp"
-        android:ems="10"
-        android:inputType="number"
-        android:translationX="30sp"
-        android:translationY="370sp"
-        app:layout_constraintStart_toEndOf="@+id/textView17"
-        tools:layout_editor_absoluteY="435dp" />
+        tools:layout_editor_absoluteY="1114dp" />
 
     <TextView
-        android:id="@+id/textView19"
+        android:id="@+id/deposit"
+        android:layout_width="80sp"
+        android:layout_height="60sp"
+        android:ems="10"
+        android:inputType="number"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:translationX="30sp"
+        android:translationY="385sp"
+        app:layout_constraintStart_toEndOf="@+id/textView17"
+        tools:layout_editor_absoluteY="805dp" />
+
+    <TextView
+        android:id="@+id/totalPrice"
         android:layout_width="100sp"
         android:layout_height="35sp"
-        android:text="RM"
         android:textAlignment="textStart"
         android:textColor="@color/black"
-        android:textSize="20sp"
+        android:textSize="18sp"
         android:translationX="30sp"
         android:translationY="445sp"
         app:layout_constraintStart_toEndOf="@+id/textView18"
-        tools:layout_editor_absoluteY="200dp" />
+        tools:layout_editor_absoluteY="1090dp" />
 
     <Button
         android:id="@+id/nextBtn"
@@ -241,6 +214,19 @@
         app:backgroundTint="#D7F8C839"
         app:layout_constraintBottom_toBottomOf="@+id/linearLayout"
         tools:layout_editor_absoluteX="300dp" />
+
+    <Button
+        android:id="@+id/priceGener"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Price"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:translationX="300sp"
+        android:translationY="-240sp"
+        app:backgroundTint="#D7F8C839"
+        app:layout_constraintBottom_toBottomOf="@+id/linearLayout"
+        tools:layout_editor_absoluteX="600dp" />
 
     <LinearLayout
         android:id="@+id/linearLayout"

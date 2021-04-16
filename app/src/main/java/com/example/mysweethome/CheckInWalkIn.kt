@@ -16,6 +16,17 @@ class CheckInWalkIn : AppCompatActivity() {
         val name = findViewById<EditText>(R.id.customerName)
         val ic = findViewById<EditText>(R.id.customerIc)
 
+        val back = findViewById<Button>(R.id.walkInNxt)
+        val actionbar = supportActionBar
+        //back button
+        actionbar!!.title = "Check - In"
+        actionbar.setDisplayHomeAsUpEnabled(true)
+
+
+        back.setOnClickListener {
+            val intent = Intent(this, CheckInMenu::class.java)
+            startActivity(intent)
+        }
 
 
         checkWalkInBtn.setOnClickListener {
@@ -27,5 +38,9 @@ class CheckInWalkIn : AppCompatActivity() {
             intent.putExtra("CustomerIC",customerIc)
             startActivity(intent)
         }
+    }
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return true
     }
 }

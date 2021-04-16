@@ -8,41 +8,67 @@ import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.database.*
+import java.text.SimpleDateFormat
 import java.util.*
+import kotlin.math.abs
 
 
 class CustomerDetails : AppCompatActivity() {
-    private lateinit var database: FirebaseDatabase
-    private lateinit var reference: DatabaseReference
+    lateinit var textView:TextView
+    lateinit var textView2:TextView
+    lateinit var paxNo: EditText
+    lateinit var sSpinner: Spinner
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.customer_booking)
 
-        // Write a message to the database
-        // Write a message to the database
-        val database = FirebaseDatabase.getInstance()
-        val myRef = database.getReference("message")
-        val ic = database.getReference("customerIC")
-
-        myRef.setValue("Hello, World!")
-
         val mPickTimeBtn = findViewById<Button>(R.id.pickDateBtn)
-        val textView     = findViewById<TextView>(R.id.dateTv)
         val mPickTimeBtn2 = findViewById<Button>(R.id.pickDateBtn2)
-        val textView2     = findViewById<TextView>(R.id.dateTv2)
-        val nxtBtn        = findViewById<Button>(R.id.nextBtn)
-        val sample        = findViewById<TextView>(R.id.sample)
-        val sample2 =findViewById<TextView>(R.id.sample2)
+        val nxtBtn = findViewById<Button>(R.id.nextBtn)
+        val priceG = findViewById<Button>(R.id.priceGener)
+        val roomPrice = findViewById<TextView>(R.id.price)
+        val deposit = findViewById<TextView>(R.id.deposit)
+        val total = findViewById<TextView>(R.id.totalPrice)
+        textView = findViewById<TextView>(R.id.dateTv)
+        textView2 = findViewById<TextView>(R.id.dateTv2)
+        paxNo = findViewById<EditText>(R.id.paxNo)
+        sSpinner = findViewById<Spinner>(R.id.spinner)
+
+
+
         //check_in_3
         val c = Calendar.getInstance()
         val year = c.get(Calendar.YEAR)
         val month = c.get(Calendar.MONTH)
         val day = c.get(Calendar.DAY_OF_MONTH)
 
-        val customerName = intent.getStringExtra("CustomerName")
-        val customerIc = intent.getStringExtra("CustomerIC")
+        val personNames = arrayOf("Single bed room", "Double bed room", "Deluxe room", "Queen room")
+        val sSpinner = findViewById<Spinner>(R.id.spinner)
+        if (sSpinner != null) {
+            val arrayAdapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, personNames)
+            sSpinner.adapter = arrayAdapter
 
+            sSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+                override fun onItemSelected(
+                    parent: AdapterView<*>,
+                    view: View,
+                    position: Int,
+                    id: Long
+                ) {
+                    Toast.makeText(
+                        this@CustomerDetails,
+                        getString(R.string.selected_item) + " " + personNames[position],
+                        Toast.LENGTH_SHORT
+                    ).show()
 
+                }
+
+                override fun onNothingSelected(parent: AdapterView<*>) {
+                    // Code to perform some action when nothing is selected
+                }
+            }
+        }
 
         //customer_booking
         mPickTimeBtn.setOnClickListener {
@@ -50,8 +76,7 @@ class CustomerDetails : AppCompatActivity() {
                 this,
                 DatePickerDialog.OnDateSetListener { view, year, monthOfYear, dayOfMonth ->
                     // Display Selected date in TextView
-                    textView.setText("" + dayOfMonth + "/" + month + "/" + year)
-                    ic.setValue("" + dayOfMonth + "/" + month + "/" + year)
+                    textView.setText("" + month + "/" + dayOfMonth + "/" + year)
                 },
                 year,
                 month,
@@ -65,7 +90,7 @@ class CustomerDetails : AppCompatActivity() {
                 this,
                 DatePickerDialog.OnDateSetListener { view, year, monthOfYear, dayOfMonth ->
                     // Display Selected date in TextView
-                    textView2.setText("" + dayOfMonth + "/" + month + "/" + year)
+                    textView2.setText("" + month + "/" + dayOfMonth + "/" + year)
                 },
                 year,
                 month,
@@ -76,80 +101,94 @@ class CustomerDetails : AppCompatActivity() {
         }//check_in_3
 
 
-        val personNames = arrayOf("Single bed room", "Double bed room", "Deluxe room", "Queen room")
-        val spinner = findViewById<Spinner>(R.id.spinner)
-        if (spinner != null) {
-            val arrayAdapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, personNames)
-            spinner.adapter = arrayAdapter
 
-            spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-                override fun onItemSelected(
-                    parent: AdapterView<*>,
-                    view: View,
-                    position: Int,
-                    id: Long
-                ) {
-                    Toast.makeText(
-                        this@CustomerDetails,
-                        getString(R.string.selected_item) + " " + personNames[position],
-                        Toast.LENGTH_SHORT
-                    ).show()
-                }
-                override fun onNothingSelected(parent: AdapterView<*>) {
-                    // Code to perform some action when nothing is selected
-                }
-            }
-        }
+        val actionbar = supportActionBar
+        //back button
+        actionbar!!.title = "Check - In"
+        actionbar.setDisplayHomeAsUpEnabled(true)
 
 
         nxtBtn.setOnClickListener {
-            //val db= Room.databaseBuilder(applicationContext,reservationDatabase::class.java,"Booking_details").build()
-            //val db=reservationDatabase(this)
-            val customer_name = customerName.toString()
-            val customerIc = customerIc.toString()
-            val checkInDate = textView.toString()
-            val checkOutDate = textView2.toString()
-            val roomType = Toast.LENGTH_SHORT.toString()
+            saveReservation()
+            val intent = Intent(this, CheckInRoomStatus::class.java)
+            startActivity(intent)
+        }
 
-            myRef.addValueEventListener(object : ValueEventListener {
-                override fun onDataChange(dataSnapshot: DataSnapshot) {
-                    // This method is called once with the initial value and again
-                    // whenever data at this location is updated.
-                    val value = dataSnapshot.getValue(String::class.java)
-                    //val value2 = dataSnapshot.getValue()
-                    Log.d("TAG", "Value is: $value")
+        //compare date
+        priceG.setOnClickListener {
+            val sDate: Date
+            val lDate: Date
+            val dates = SimpleDateFormat("MM/dd/yyyy")
+            val sDate1 = textView.text.toString().trim()
+            val lDate2 = textView2.text.toString().trim()
+            sDate = dates.parse(sDate1)
+            lDate = dates.parse(lDate2)
+            val difference: Long = abs(lDate.time - sDate.time)
+            val differenceDates = difference / (24 * 60 * 60 * 1000)
+            val dayDifference = differenceDates
+            //calculate price
+            if (sSpinner.selectedItem.toString() == "Double bed room") {
+                val price = 100
+                val depositPrice = 50
+                val totalPrice = price * dayDifference
+                val finalTotal = totalPrice.plus(depositPrice)
+                roomPrice.setText("RM" + totalPrice.toString().trim())
+                deposit.setText("RM50")
+                total.setText("RM" + finalTotal.toString().trim())
+            } else {
+                if (sSpinner.selectedItem.toString() == "Single bed room") {
+                    val price = 70
+                    val depositPrice = 50
+                    val totalPrice1 = price * dayDifference
+                    val finalTotal1 = totalPrice1.plus(depositPrice)
+                    roomPrice.setText("RM" + totalPrice1.toString().trim())
+                    deposit.setText("RM50")
+                    total.setText("RM" + finalTotal1.toString().trim())
+                } else {
+                    if (sSpinner.selectedItem.toString() == "Deluxe room") {
+                        val price = 150
+                        val depositPrice = 50
+                        val totalPrice2 = price * dayDifference
+                        val finalTotal2 = totalPrice2.plus(depositPrice)
+                        roomPrice.setText("RM" + totalPrice2.toString().trim())
+                        deposit.setText("RM50")
+                        total.setText("RM" + finalTotal2.toString().trim())
+                    } else {
+                        if (sSpinner.selectedItem.toString() == "Queen room") {
+                            val price = 200
+                            val depositPrice = 50
+                            val totalPrice3 = price * dayDifference
+                            val finalTotal3 = totalPrice3.plus(depositPrice)
+                            roomPrice.setText("RM" + totalPrice3.toString().trim())
+                            deposit.setText("RM50")
+                            total.setText("RM" + finalTotal3.toString().trim())
+                        }
+                    }
 
-                    sample.text = value
-                    sample2.text = ic.toString()
-                //sample2.text = customerIc.toString()
                 }
-                override fun onCancelled(error: DatabaseError) {
-                    // Failed to read value
-                    Log.w("TAG", "Failed to read value.", error.toException())
-                }
-            })
-
-            ic.addValueEventListener(object : ValueEventListener {
-                override fun onDataChange(dataSnapshot: DataSnapshot) {
-                    // This method is called once with the initial value and again
-                    // whenever data at this location is updated.
-                    val value = dataSnapshot.getValue(String::class.java)
-                    //val value2 = dataSnapshot.getValue()
-                    Log.d("TAG", "Value is: $value")
-
-                    sample2.text = value
-                    //sample2.text = customerIc.toString()
-                }
-                override fun onCancelled(error: DatabaseError) {
-                    // Failed to read value
-                    Log.w("TAG", "Failed to read value.", error.toException())
-                }
-            })
-            //db.reservationDAO().insert(reservationEntity(1,customer_name,customerIc,checkInDate,checkOutDate,roomType))
-            //val intent = Intent(this, CheckInRoomStatus::class.java)
-            //startActivity(intent)
+            }
         }
     }
 
 
+    private fun saveReservation() {
+        val customerName = intent.getStringExtra("CustomerName").toString()
+        val customerIc = intent.getStringExtra("CustomerIC").toString()
+        val roomType = sSpinner.selectedItem.toString()
+        val check_in_date = textView.text.toString().trim()
+        val check_out_date = textView2.text.toString().trim()
+        val paxNo = paxNo.text.toString().trim()
+
+        val ref = FirebaseDatabase.getInstance().getReference("reservation_table")
+        val lfId = ref.push().key
+        val lf = DBReservation(customerName, customerIc, roomType, check_in_date,check_out_date,paxNo)
+        ref.child(lfId.toString()).setValue(lf).addOnCompleteListener{
+            Toast.makeText(applicationContext, "Reservation saved successfully", Toast.LENGTH_LONG).show()
+        }
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return true
+    }
 }

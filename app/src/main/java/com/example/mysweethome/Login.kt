@@ -36,6 +36,7 @@ class Login : AppCompatActivity() {
             val sample1 = "jy97@gmail.com"
             val psample2 = "123456"
             val adminSample ="cch97@gmail.com"
+            val staffSample ="john@gmail.com"
 
 
             if(TextUtils.isEmpty(email) || TextUtils.isEmpty(password)) {
@@ -44,7 +45,7 @@ class Login : AppCompatActivity() {
                 mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(this, OnCompleteListener { task ->
                     if(task.isSuccessful) {
                         Toast.makeText(this, "Successfully Logged In", Toast.LENGTH_LONG).show()
-                        val intent = Intent(this, FrontDesk::class.java)
+                        val intent = Intent(this, CustMenu::class.java)
                         startActivity(intent)
                         finish()
                     }else {
@@ -60,6 +61,13 @@ class Login : AppCompatActivity() {
                                 Toast.makeText(this, "Successfully Logged In", Toast.LENGTH_LONG)
                                     .show()
                                 val intent = Intent(this, AdminMenu::class.java)
+                                startActivity(intent)
+                                finish()
+                            }else{
+                            if (email == staffSample && password == psample2) {
+                                Toast.makeText(this, "Successfully Logged In", Toast.LENGTH_LONG)
+                                    .show()
+                                val intent = Intent(this, HkStaffMenu::class.java)
                                 startActivity(intent)
                                 finish()
                             }else{

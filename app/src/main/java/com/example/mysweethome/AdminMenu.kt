@@ -5,13 +5,16 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageView
+import android.widget.TextView
 
 class AdminMenu : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.admin_menu)
 
+        val adminName = findViewById<TextView>(R.id.adminName)
         setTitle("Admin Menu");
+        adminName.setText("Christal")
 
         val toFrontDesk = findViewById<ImageView>(R.id.imgViewFrontDesk)
         val toViewHousekeeping = findViewById<ImageView>(R.id.imgViewHousekeeping)

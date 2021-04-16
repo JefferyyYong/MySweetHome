@@ -23,6 +23,8 @@ class FrontDesk : AppCompatActivity() {
         val logOutBtn = findViewById<Button>(R.id.logOutBtn)
         val loginName = findViewById<TextView>(R.id.loginName)
 
+        setTitle("Front Desk Menu")
+
         loginName.text = "Jeffery"
 
         checkInMenuBtn.setOnClickListener {

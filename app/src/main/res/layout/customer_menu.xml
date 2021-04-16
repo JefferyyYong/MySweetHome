@@ -4,9 +4,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context=".CustMenu">
 
-    <androidx.appcompat.widget.Toolbar
+    <!--><androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -26,63 +27,63 @@
             tools:layout_editor_absoluteX="155dp"
             tools:layout_editor_absoluteY="16dp" />
 
-    </androidx.appcompat.widget.Toolbar>
+    </androidx.appcompat.widget.Toolbar><!-->
+
 
     <ImageView
         android:id="@+id/imgMakeReservation"
         android:layout_width="161dp"
         android:layout_height="127dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="197dp"
+        android:layout_marginStart="28dp"
 
+        android:layout_marginTop="115dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar2"/>
-        //app:srcCompat="@drawable/img_menu" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/img_menu" />
 
     <ImageView
         android:id="@+id/imgViewHistory"
         android:layout_width="127dp"
         android:layout_height="122dp"
-        android:layout_marginTop="202dp"
-        android:layout_marginEnd="48dp"
-
+        android:layout_marginTop="120dp"
+        android:layout_marginEnd="36dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar2"/>
-        //app:srcCompat="@drawable/img_menu2" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/img_menu2" />
 
     <TextView
         android:id="@+id/txtMakeReservation"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="68dp"
-        android:layout_marginBottom="340dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="40dp"
         android:text="Make Reservation"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgMakeReservation" />
 
     <TextView
         android:id="@+id/txtViewHistory"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="68dp"
-        android:layout_marginBottom="340dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="60dp"
         android:text="View History"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgViewHistory" />
 
     <Button
         android:id="@+id/btnLogout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="157dp"
-        android:layout_marginBottom="192dp"
+        android:layout_marginTop="104dp"
+        android:layout_marginEnd="156dp"
         android:text="Logout"
         android:textAllCaps="false"
         android:textColor="@color/black"
         app:backgroundTint="#F2C94C"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtMakeReservation" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

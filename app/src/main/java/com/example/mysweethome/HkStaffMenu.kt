@@ -19,7 +19,7 @@ class HkStaffMenu : AppCompatActivity() {
         val toLogout = findViewById<Button>(R.id.btnLogout)
 
         toLostFound.setOnClickListener {
-            val intent = Intent(this, LostFound::class.java)
+            val intent = Intent(this, LostFoundTable::class.java)
             startActivity(intent)
         }
 

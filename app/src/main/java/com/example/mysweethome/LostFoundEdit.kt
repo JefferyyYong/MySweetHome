@@ -58,7 +58,7 @@ class LostFoundEdit : AppCompatActivity() {
         val toUpdate = findViewById<Button>(R.id.btnUpdate)
 
         toUpdate.setOnClickListener {
-            val intent = Intent(this, LostFound::class.java)
+            val intent = Intent(this, LostFoundTable::class.java)
             startActivity(intent)
         }
     }

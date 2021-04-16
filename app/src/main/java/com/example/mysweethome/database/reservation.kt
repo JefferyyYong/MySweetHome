@@ -17,3 +17,4 @@ data class reservation(
     var customerIc: String,
 
 )
+

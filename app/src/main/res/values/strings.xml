@@ -28,17 +28,15 @@
     <string name="lf_add">Add</string>
     <string name="lf_location">Location</string>
     <string name="lf_edit">Edit</string>
-<<<<<<<<< Temporary merge branch 1
     <string name="room_no">Room No.:</string>
     <string name="status">Status:</string>
     <string name="floor">Floor:</string>
     <string name="item">Item:</string>
     <string name="date">Date:</string>
-=========
+
     <string name="check_in">Check-In</string>
     <string name="check_out">Check-Out</string>
     <string name="room_status">Room Status</string>
     <string name="homepage">Homepage</string>
->>>>>>>>> Temporary merge branch 2
 
 </resources>

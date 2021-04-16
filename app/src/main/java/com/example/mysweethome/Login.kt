@@ -27,7 +27,8 @@ class Login : AppCompatActivity() {
         //mAuth = FirebaseAuth.getInstance()
 
         loginBtn.setOnClickListener {
-            val intent = Intent(this, FrontDesk::class.java)
+            //val intent = Intent(this, FrontDesk::class.java)
+            val intent = Intent(this, LostFoundTable::class.java)
            startActivity(intent)
         }
         /*loginBtn.setOnClickListener {

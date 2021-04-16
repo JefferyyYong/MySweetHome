@@ -14,7 +14,7 @@
         <activity android:name=".LostFoundAdd" />
         <activity android:name=".InspectFloor" />
         <activity android:name=".InspectRoom" />
-        <activity android:name=".LostFound" />
+        <activity android:name=".LostFoundTable" />
         <activity android:name=".HkStaffMenu" />
         <activity android:name=".InspectMenu" />
         <activity android:name=".AdminTask" />

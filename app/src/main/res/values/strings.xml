@@ -29,6 +29,18 @@
     <string name="lf_location">Location</string>
     <string name="lf_edit">Edit</string>
 
+    <string name="title_activity_cust_menu">CustMenu</string>
+
+    <!-->drop down list for room type<!-->
+    <string name="room_prompt">Choose a room type</string>
+
+    <string-array name="room_arrays">
+        <item>Double bed room</item>
+        <item>Single bed room</item>
+        <item>Deluxe room</item>
+        <item>Queen room</item>
+    </string-array>
+
 
     <string name="room_no">Room No.:</string>
     <string name="status">Status:</string>

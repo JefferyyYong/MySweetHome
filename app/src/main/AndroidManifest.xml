@@ -10,11 +10,17 @@
         android:supportsRtl="true"
 
         android:theme="@style/Theme.MySweetHome">
+
+        <activity android:name=".ReservationHistoryDetails"/>
+        <activity android:name=".CustPayment" />
+        <activity android:name=".CustMenu" />
+        <activity android:name=".AdminMenu" />
+
         <activity android:name=".LostFoundEdit"></activity>
         <activity android:name=".LostFoundAdd" />
         <activity android:name=".InspectFloor" />
         <activity android:name=".InspectRoom" />
-        <activity android:name=".LostFound" />
+        <activity android:name=".LostFoundTable" />
         <activity android:name=".HkStaffMenu" />
         <activity android:name=".InspectMenu" />
         <activity android:name=".AdminTask" />
@@ -22,6 +28,7 @@
         <activity android:name=".AdminMenu" />
         <activity android:name=".ManageMenu2"/>
         <activity android:name=".CheckOutMenu2" />
+
         <activity android:name=".CheckInRoomStatus" />
         <activity android:name=".Reservation" />
         <activity android:name=".CustomerDetails" />
@@ -32,7 +39,11 @@
         <activity android:name=".CheckInMenu" />
         <activity android:name=".FrontDesk" />
         <activity android:name=".Login" />
+
+        <activity android:name=".CustReservation" />
+        <activity android:name=".ReservationHistory" />
         <activity android:name=".signUp" />
+
 
         <activity android:name=".MainActivity">
             <intent-filter>

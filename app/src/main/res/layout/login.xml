@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".login">
+    tools:context=".Login">
 
     <ImageView
         android:id="@+id/imageView"
@@ -60,12 +60,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="56dp"
                 android:layout_weight="1"
-                android:text="Username:"
+                android:text="Email:"
                 android:textAlignment="center"
                 android:textSize="25sp" />
 
             <EditText
-                android:id="@+id/editTextTextPersonName"
+                android:id="@+id/login_email"
                 android:layout_width="match_parent"
                 android:layout_height="67dp"
                 android:layout_weight="1"
@@ -84,7 +84,7 @@
                 android:textSize="25sp" />
 
             <EditText
-                android:id="@+id/editTextNumberPassword"
+                android:id="@+id/login_password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"

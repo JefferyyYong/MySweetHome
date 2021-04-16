@@ -4,30 +4,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#F2C94C"
-        android:minHeight="?attr/actionBarSize"
-        android:theme="?attr/actionBarTheme"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="130dp"
-            android:text="@string/housekeeping"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large"
-            android:textColor="@color/black"
-            tools:layout_editor_absoluteX="155dp"
-            tools:layout_editor_absoluteY="16dp" />
-
-    </androidx.appcompat.widget.Toolbar>
+    android:layout_height="match_parent"
+    tools:context=".HousekeepingMenu">
 
     <ImageView
         android:id="@+id/imgViewTaskAllocation"
@@ -54,9 +32,9 @@
         app:srcCompat="@drawable/btn_inspect"
         android:contentDescription="@string/desc_button_inspection" />
 
-    <Button
+    <android.widget.Button
         android:id="@+id/btnLogout"
-        android:layout_width="wrap_content"
+        android:layout_width="130dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="152dp"
         android:layout_marginEnd="153dp"
@@ -65,10 +43,10 @@
         android:text="@string/log_out"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="#000000"
+        android:textStyle="bold"
         app:backgroundTint="#F2C94C"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:strokeColor="#F2C94C" />
 

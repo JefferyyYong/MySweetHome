@@ -6,24 +6,26 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageView
 
-class AdminMenu : AppCompatActivity() {
+class HousekeepingMenu : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.admin_menu)
+        setContentView(R.layout.housekeeping_menu)
 
-        setTitle("Admin Menu");
+        setTitle("Housekeeping");
 
-        val toFrontDesk = findViewById<ImageView>(R.id.imgViewFrontDesk)
-        val toViewHousekeeping = findViewById<ImageView>(R.id.imgViewHousekeeping)
+        //Admin
+
+        val toTask = findViewById<ImageView>(R.id.imgViewTaskAllocation)
+        val toInspect = findViewById<ImageView>(R.id.imgViewInspection)
         val toLogout = findViewById<Button>(R.id.btnLogout)
 
-        toFrontDesk.setOnClickListener {
-            val intent = Intent(this, FrontDesk::class.java)
+        toTask.setOnClickListener {
+            val intent = Intent(this, AdminTask::class.java)
             startActivity(intent)
         }
 
-        toViewHousekeeping.setOnClickListener {
-            val intent = Intent(this, HousekeepingMenu::class.java)
+        toInspect.setOnClickListener {
+            val intent = Intent(this, InspectMenu::class.java)
             startActivity(intent)
         }
 
@@ -31,6 +33,5 @@ class AdminMenu : AppCompatActivity() {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
-
     }
 }

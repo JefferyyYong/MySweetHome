@@ -11,24 +11,24 @@ import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.auth.FirebaseAuth
 
 class Login : AppCompatActivity() {
-    private lateinit var mAuth: FirebaseAuth
-    private lateinit var emailEt: EditText
-    private lateinit var passwordEt: EditText
-    private lateinit var loginBtn: Button
+    //private lateinit var mAuth: FirebaseAuth
+    //private lateinit var emailEt: EditText
+    //private lateinit var passwordEt: EditText
+    //private lateinit var loginBtn: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.login)
 
-        //emailEt = findViewById(R.id.login_email)
-        //passwordEt = findViewById(R.id.login_password)
+       // emailEt = findViewById(R.id.login_email)
+       // passwordEt = findViewById(R.id.login_password)
 
-        //loginBtn = findViewById(R.id.loginBtn)
+        val loginBtn = findViewById<Button>(R.id.loginBtn)
         //mAuth = FirebaseAuth.getInstance()
 
         loginBtn.setOnClickListener {
             val intent = Intent(this, FrontDesk::class.java)
-           startActivity(intent)
+        startActivity(intent)
         }
         /*loginBtn.setOnClickListener {
             var email: String = emailEt.text.toString()

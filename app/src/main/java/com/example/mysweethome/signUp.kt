@@ -30,6 +30,7 @@ class signUp : AppCompatActivity() {
         signUpBtn = findViewById(R.id.signup_btn)
 
         val signUpForm = findViewById<Button>(R.id.signup_btn)
+
         //back button
         val actionbar = supportActionBar
         //back button
@@ -62,6 +63,7 @@ class signUp : AppCompatActivity() {
         }
 
     }
+
     //back button
     override fun onSupportNavigateUp(): Boolean {
         onBackPressed()

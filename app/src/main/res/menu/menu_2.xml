@@ -1,24 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
         android:id="@+id/Item1"
-        android:title="@string/homepage"
+        android:title="Front Desk Menu"
         />
 
     <item android:id="@+id/Item2"
-        android:title="@string/check_in"
-
+        android:title="Housekeeping Menu"
         />
 
     <item android:id="@+id/Item3"
-        android:title="@string/check_out"
-
+        android:title="      Task Allocation"
         />
+
     <item android:id="@+id/Item4"
-        android:title="@string/room_status"
-
-        ></item>
-
+        android:title="      Inspection"
+        />
 </menu>

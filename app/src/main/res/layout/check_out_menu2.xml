@@ -10,32 +10,30 @@
         android:id="@+id/selectBtn3"
         android:layout_width="140dp"
         android:layout_height="76dp"
-        android:layout_marginBottom="172dp"
+        android:layout_marginTop="50dp"
         android:text="Cancel"
         android:textColor="@color/black"
         android:textSize="20sp"
         app:backgroundTint="@android:color/holo_red_light"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.852"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.841"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView4" />
 
     <Button
         android:id="@+id/selectBtn4"
         android:layout_width="142dp"
         android:layout_height="75dp"
+        android:layout_marginTop="50dp"
         android:layout_marginEnd="45dp"
-        android:layout_marginBottom="176dp"
         android:text="Proceed"
         android:textColor="@android:color/black"
         android:textSize="20sp"
         app:backgroundTint="@android:color/holo_green_light"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/selectBtn3"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.878"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView4"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView4" />
 
     <TextView
         android:id="@+id/textView25"
@@ -57,15 +55,53 @@
 
     <ImageView
         android:id="@+id/imageView4"
-        android:layout_width="331dp"
-        android:layout_height="229dp"
-        android:layout_marginTop="25dp"
-        android:layout_marginBottom="200dp"
-        app:layout_constraintBottom_toTopOf="@+id/selectBtn3"
+        android:layout_width="369dp"
+        android:layout_height="269dp"
+        android:layout_marginTop="68dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.578"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView25"
-        app:layout_constraintVertical_bias="0.12"
         app:srcCompat="@drawable/pad" />
+
+    <TextView
+        android:id="@+id/dPrice"
+        android:layout_width="302dp"
+        android:layout_height="53dp"
+        android:layout_marginTop="15dp"
+        android:text="RM 50.00"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="35sp"
+        app:layout_constraintEnd_toEndOf="@+id/imageView4"
+        app:layout_constraintHorizontal_bias="0.45"
+        app:layout_constraintStart_toStartOf="@+id/imageView4"
+        app:layout_constraintTop_toBottomOf="@+id/cName2" />
+
+    <TextView
+        android:id="@+id/cName2"
+        android:layout_width="302dp"
+        android:layout_height="53dp"
+        android:layout_marginTop="36dp"
+        android:text="Total Deposit Amount:"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="@+id/imageView4"
+        app:layout_constraintHorizontal_bias="0.507"
+        app:layout_constraintStart_toStartOf="@+id/imageView4"
+        app:layout_constraintTop_toBottomOf="@+id/cName" />
+
+    <TextView
+        android:id="@+id/cName"
+        android:layout_width="302dp"
+        android:layout_height="53dp"
+        android:layout_marginTop="24dp"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="35sp"
+        app:layout_constraintEnd_toEndOf="@+id/imageView4"
+        app:layout_constraintStart_toStartOf="@+id/imageView4"
+        app:layout_constraintTop_toTopOf="@+id/imageView4" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

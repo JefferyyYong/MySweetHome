@@ -19,7 +19,7 @@ class CheckInWalkIn : AppCompatActivity() {
         val back = findViewById<Button>(R.id.walkInNxt)
         val actionbar = supportActionBar
         //back button
-        actionbar!!.title = "Check - In"
+        actionbar!!.title = "Check In"
         actionbar.setDisplayHomeAsUpEnabled(true)
 
 

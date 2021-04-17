@@ -6,78 +6,25 @@
     android:layout_height="match_parent"
     tools:context=".RoomStatus">
 
-    <EditText
-        android:id="@+id/editTextTextPersonName7"
-        android:layout_width="170dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="12dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName6" />
-
-    <EditText
-        android:id="@+id/editTextTextPersonName6"
-        android:layout_width="170dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="12dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName5" />
-
     <TextView
-        android:id="@+id/textView29"
-        android:layout_width="180dp"
+        android:id="@+id/textView9"
+        android:layout_width="160dp"
         android:layout_height="43dp"
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="32dp"
-        android:text="Room Floor:"
-        android:textAlignment="center"
-        android:textColor="@color/black"
-        android:textSize="30sp"
-        app:layout_constraintEnd_toStartOf="@+id/editTextTextPersonName7"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView28" />
-
-    <TextView
-        android:id="@+id/textView28"
-        android:layout_width="180dp"
-        android:layout_height="43dp"
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="36dp"
-        android:text="Room Type:"
-        android:textAlignment="center"
-        android:textColor="@color/black"
-        android:textSize="30sp"
-        app:layout_constraintEnd_toStartOf="@+id/editTextTextPersonName6"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView27" />
-
-    <TextView
-        android:id="@+id/textView27"
-        android:layout_width="180dp"
-        android:layout_height="43dp"
-        android:layout_marginStart="36dp"
         android:layout_marginTop="24dp"
         android:text="Room No:"
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="30sp"
-        app:layout_constraintEnd_toStartOf="@+id/editTextTextPersonName5"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView26" />
+        app:layout_constraintTop_toBottomOf="@+id/textView21" />
 
     <TextView
-        android:id="@+id/textView26"
+        android:id="@+id/textView21"
         android:layout_width="303dp"
         android:layout_height="44dp"
-        android:layout_marginTop="72dp"
+        android:layout_marginStart="152dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="141dp"
         android:text="Room Status"
         android:textAlignment="center"
         android:textAllCaps="false"
@@ -85,70 +32,160 @@
         android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.529"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
-        android:id="@+id/editTextTextPersonName5"
-        android:layout_width="170dp"
-        android:layout_height="wrap_content"
+    <TextView
+        android:id="@+id/roomNo"
+        android:layout_width="120sp"
+        android:layout_height="43dp"
         android:layout_marginTop="24dp"
-        android:layout_marginEnd="16dp"
         android:ems="10"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView26" />
+        android:inputType="number"
+        android:textAlignment="textStart"
+        android:textColor="@color/black"
+        android:textSize="30sp"
+        app:layout_constraintStart_toEndOf="@+id/textView9"
+        app:layout_constraintTop_toBottomOf="@+id/textView21" />
 
     <Button
-        android:id="@+id/button"
-        android:layout_width="149dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="28dp"
-        android:text="Search"
-        android:textSize="20sp"
+        android:id="@+id/nxtBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="24dp"
+        android:text="Next"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.538"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView29" />
-
-    <ImageView
-        android:id="@+id/imageView7"
-        android:layout_width="391dp"
-        android:layout_height="5dp"
-        android:layout_marginTop="28dp"
-        android:scaleX="13.0"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button"
-        app:srcCompat="@android:drawable/bottom_bar" />
+        app:layout_constraintHorizontal_bias="0.142"
+        app:layout_constraintStart_toEndOf="@+id/roomNo"
+        app:layout_constraintTop_toBottomOf="@+id/textView21" />
 
     <ScrollView
-        android:layout_width="501dp"
-        android:layout_height="291dp"
+        android:layout_width="422dp"
+        android:layout_height="440dp"
         android:layout_marginTop="40dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView7">
+        app:layout_constraintTop_toBottomOf="@+id/roomNo">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <ImageView
-                android:id="@+id/imageView5"
-                android:layout_width="456dp"
-                android:layout_height="100dp"
-                app:srcCompat="@drawable/box" />
+            <TextView
+                android:id="@+id/label1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Floor 2"
+                android:textAlignment="center"
+                android:textSize="25sp" />
 
-            <ImageView
-                android:id="@+id/imageView8"
-                android:layout_width="456dp"
-                android:layout_height="100dp"
-                android:layout_marginTop="40sp"
-                app:srcCompat="@drawable/box" />
+            <Button
+                android:id="@+id/room201"
+                android:layout_width="match_parent"
+                android:layout_height="100sp"
+                android:text="Room No 201                                             Single Bed Room"
+                android:textAlignment="textStart"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                app:backgroundTintMode="src_over" />
+
+            <Button
+                android:id="@+id/room202"
+                android:layout_width="match_parent"
+                android:layout_height="100sp"
+                android:text="Room No 202                                             Single Bed Room"
+                android:textAlignment="textStart"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/label2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Floor 3"
+                android:textAlignment="center"
+                android:textSize="25sp" />
+
+            <Button
+                android:id="@+id/room301"
+                android:layout_width="match_parent"
+                android:layout_height="100sp"
+                android:text="Room No 301                                             Double Bed Room"
+                android:textAlignment="textStart"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/room302"
+                android:layout_width="match_parent"
+                android:layout_height="100sp"
+                android:text="Room No 302                                             Double Bed Room"
+                android:textAlignment="textStart"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/label3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Floor 4"
+                android:textAlignment="center"
+                android:textSize="25sp" />
+
+            <Button
+                android:id="@+id/room401"
+                android:layout_width="match_parent"
+                android:layout_height="100sp"
+                android:text="Room No 401                                             Deluxe Room"
+                android:textAlignment="textStart"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/room402"
+                android:layout_width="match_parent"
+                android:layout_height="100sp"
+                android:text="Room No 402                                             Deluxe Room"
+                android:textAlignment="textStart"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/label4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Floor 5"
+                android:textAlignment="center"
+                android:textSize="25sp" />
+
+            <Button
+                android:id="@+id/room501"
+                android:layout_width="match_parent"
+                android:layout_height="100sp"
+                android:text="Room No 501                                             Queen Room"
+                android:textAlignment="textStart"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/room502"
+                android:layout_width="match_parent"
+                android:layout_height="100sp"
+                android:text="Room No 502                                             Queen Room"
+                android:textAlignment="textStart"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/label5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/label6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:textSize="25sp" />
+
         </LinearLayout>
     </ScrollView>
-
 </androidx.constraintlayout.widget.ConstraintLayout>

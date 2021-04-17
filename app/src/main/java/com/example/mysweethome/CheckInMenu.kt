@@ -19,7 +19,7 @@ class CheckInMenu : AppCompatActivity() {
         //back button
         val actionbar = supportActionBar
         //back button
-        actionbar!!.title = "Sign up"
+        actionbar!!.title = "Check In"
         actionbar.setDisplayHomeAsUpEnabled(true)
 
         walkInType.setOnClickListener{
@@ -28,7 +28,7 @@ class CheckInMenu : AppCompatActivity() {
         }
 
         reservType.setOnClickListener{
-            val intent = Intent(this, CheckInWalkIn::class.java)
+            val intent = Intent(this, CheckInReservation::class.java)
             startActivity(intent)
         }
 

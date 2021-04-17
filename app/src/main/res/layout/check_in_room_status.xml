@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/room_no"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".CheckInRoomStatus">
@@ -11,7 +12,7 @@
         android:layout_width="160dp"
         android:layout_height="43dp"
         android:layout_marginTop="20dp"
-        android:text="Room Type:"
+        android:text="Room No:"
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="30sp"
@@ -23,7 +24,7 @@
         android:layout_width="303dp"
         android:layout_height="44dp"
         android:layout_marginStart="152dp"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="141dp"
         android:text="Room Status"
         android:textAlignment="center"
@@ -32,20 +33,162 @@
         android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.541"
+        app:layout_constraintHorizontal_bias="0.529"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView23"
-        android:layout_width="210dp"
-        android:layout_height="42dp"
+        android:id="@+id/roomNo"
+        android:layout_width="120sp"
+        android:layout_height="43dp"
         android:layout_marginTop="20dp"
-        android:text="TextView"
-        android:textSize="28sp"
+        android:ems="10"
+        android:inputType="number"
+        android:textAlignment="textStart"
+        android:textColor="@color/black"
+        android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.155"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/textView21"
         app:layout_constraintTop_toBottomOf="@+id/textView9" />
+
+    <Button
+        android:id="@+id/nxtBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Next"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.578"
+        app:layout_constraintStart_toEndOf="@+id/roomNo"
+        app:layout_constraintTop_toBottomOf="@+id/textView9" />
+
+    <ScrollView
+        android:layout_width="422dp"
+        android:layout_height="440dp"
+        android:layout_marginTop="40dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/roomNo">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/label1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Floor 2"
+                android:textAlignment="center"
+                android:textSize="25sp" />
+
+            <Button
+                android:id="@+id/room201"
+                android:layout_width="match_parent"
+                android:layout_height="100sp"
+                android:text="Room No 201                                             Single Bed Room"
+                android:textAlignment="textStart"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                app:backgroundTintMode="src_over" />
+
+            <Button
+                android:id="@+id/room202"
+                android:layout_width="match_parent"
+                android:layout_height="100sp"
+                android:text="Room No 202                                             Single Bed Room"
+                android:textAlignment="textStart"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/label2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Floor 3"
+                android:textAlignment="center"
+                android:textSize="25sp" />
+
+            <Button
+                android:id="@+id/room301"
+                android:layout_width="match_parent"
+                android:layout_height="100sp"
+                android:text="Room No 301                                             Double Bed Room"
+                android:textAlignment="textStart"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/room302"
+                android:layout_width="match_parent"
+                android:layout_height="100sp"
+                android:text="Room No 302                                             Double Bed Room"
+                android:textAlignment="textStart"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/label3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Floor 4"
+                android:textAlignment="center"
+                android:textSize="25sp" />
+
+            <Button
+                android:id="@+id/room401"
+                android:layout_width="match_parent"
+                android:layout_height="100sp"
+                android:text="Room No 401                                             Deluxe Room"
+                android:textAlignment="textStart"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/room402"
+                android:layout_width="match_parent"
+                android:layout_height="100sp"
+                android:text="Room No 402                                             Deluxe Room"
+                android:textAlignment="textStart"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/label4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Floor 5"
+                android:textAlignment="center"
+                android:textSize="25sp" />
+
+            <Button
+                android:id="@+id/room501"
+                android:layout_width="match_parent"
+                android:layout_height="100sp"
+                android:text="Room No 501                                             Queen Room"
+                android:textAlignment="textStart"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/room502"
+                android:layout_width="match_parent"
+                android:layout_height="100sp"
+                android:text="Room No 502                                             Queen Room"
+                android:textAlignment="textStart"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/label5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/label6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:textSize="25sp" />
+
+        </LinearLayout>
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

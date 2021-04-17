@@ -19,10 +19,9 @@ class FrontDesk : AppCompatActivity() {
         val checkInMenuBtn = findViewById<ImageButton>(R.id.checkInBtn)
         val checkOutMenuBtn = findViewById<ImageButton>(R.id.checkOutBtn)
         val manageMenuBtn = findViewById<ImageButton>(R.id.manageRoomBtn)
-        val roomStatusBtn = findViewById<ImageButton>(R.id.roomStatusBtn)
         val logOutBtn = findViewById<Button>(R.id.logOutBtn)
         val loginName = findViewById<TextView>(R.id.loginName)
-
+        val room      = findViewById<ImageButton>(R.id.roomBtn)
         setTitle("Front Desk Menu")
 
         loginName.text = "Jeffery"
@@ -40,12 +39,12 @@ class FrontDesk : AppCompatActivity() {
             val intent = Intent(this, ManageMenu::class.java)
             startActivity(intent)
         }
-        roomStatusBtn.setOnClickListener {
-            val intent = Intent(this, RoomStatus::class.java)
-            startActivity(intent)
-        }
         logOutBtn.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+        }
+        room.setOnClickListener {
+            val intent = Intent(this, RoomStatus::class.java)
             startActivity(intent)
         }
 

@@ -104,7 +104,7 @@ class CustomerDetails : AppCompatActivity() {
 
         val actionbar = supportActionBar
         //back button
-        actionbar!!.title = "Check - In"
+        actionbar!!.title = "Check In"
         actionbar.setDisplayHomeAsUpEnabled(true)
 
 
@@ -180,8 +180,8 @@ class CustomerDetails : AppCompatActivity() {
         val paxNo = paxNo.text.toString().trim()
 
         val ref = FirebaseDatabase.getInstance().getReference("reservation_table")
-        val lfId = ref.push().key
-        val lf = DBReservation(customerName, customerIc, roomType, check_in_date,check_out_date,paxNo)
+        val lfId = customerIc
+        val lf = DBReservation(customerIc,customerName, roomType, check_in_date,check_out_date,paxNo)
         ref.child(lfId.toString()).setValue(lf).addOnCompleteListener{
             Toast.makeText(applicationContext, "Reservation saved successfully", Toast.LENGTH_LONG).show()
         }

@@ -8,15 +8,15 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-
         android:theme="@style/Theme.MySweetHome">
-
-        <activity android:name=".ReservationHistoryDetails"/>
+        <activity android:name=".CheckInReservation2"></activity>
+        <activity android:name=".CheckInReservation" />
+        <activity android:name=".database.CheckInReservation" />
+        <activity android:name=".ReservationHistoryDetails" />
         <activity android:name=".CustPayment" />
         <activity android:name=".CustMenu" />
         <activity android:name=".AdminMenu" />
-
-        <activity android:name=".LostFoundEdit"></activity>
+        <activity android:name=".LostFoundEdit" />
         <activity android:name=".LostFoundAdd" />
         <activity android:name=".InspectFloor" />
         <activity android:name=".InspectRoom" />
@@ -26,9 +26,8 @@
         <activity android:name=".AdminTask" />
         <activity android:name=".HousekeepingMenu" />
         <activity android:name=".AdminMenu" />
-        <activity android:name=".ManageMenu2"/>
+        <activity android:name=".ManageMenu2" />
         <activity android:name=".CheckOutMenu2" />
-
         <activity android:name=".CheckInRoomStatus" />
         <activity android:name=".Reservation" />
         <activity android:name=".CustomerDetails" />
@@ -39,12 +38,9 @@
         <activity android:name=".CheckInMenu" />
         <activity android:name=".FrontDesk" />
         <activity android:name=".Login" />
-
         <activity android:name=".CustReservation" />
         <activity android:name=".ReservationHistory" />
         <activity android:name=".signUp" />
-
-
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

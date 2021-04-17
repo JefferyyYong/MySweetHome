@@ -19,7 +19,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/_"
+        app:srcCompat="@drawable/sample4"
         tools:visibility="visible" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -28,6 +28,7 @@
         android:layout_marginStart="4dp"
         app:layout_constraintStart_toStartOf="parent"
         tools:layout_editor_absoluteY="71dp">
+
 
         <ImageView
             android:id="@+id/imageView6"
@@ -40,17 +41,18 @@
             android:contentDescription="@string/todo"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.486"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0"
+            app:layout_constraintVertical_bias="0.412"
             app:srcCompat="@drawable/imageedit_18_3429512413" />
 
         <com.google.android.material.chip.Chip
             android:id="@+id/Login"
             android:layout_width="223dp"
-            android:layout_height="64dp"
+            android:layout_height="70dp"
             android:layout_marginStart="83dp"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="56dp"
             android:layout_marginEnd="83dp"
             android:text="@string/login"
             android:textAlignment="center"
@@ -59,8 +61,7 @@
             android:textScaleX="3"
             android:textSize="18sp"
             android:textStyle="bold"
-            app:backgroundTint="#F8EDD631"
-            app:chipSurfaceColor="#F8EDD631"
+            app:chipSurfaceColor="#FFEB3B"
             app:iconTint="#000000"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -70,13 +71,12 @@
 
         </com.google.android.material.chip.Chip>
 
-
         <com.google.android.material.chip.Chip
             android:id="@+id/Signup"
             android:layout_width="223dp"
-            android:layout_height="64dp"
+            android:layout_height="70dp"
             android:layout_marginStart="85dp"
-            android:layout_marginTop="36dp"
+            android:layout_marginTop="48dp"
             android:layout_marginEnd="83dp"
             android:text="@string/sign_up"
             android:textAlignment="center"
@@ -85,7 +85,7 @@
             android:textScaleX="3"
             android:textSize="36sp"
             android:textStyle="bold"
-            app:chipSurfaceColor="#F8EDD631"
+            app:chipSurfaceColor="#FFEB3B"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.437"
             app:layout_constraintStart_toStartOf="parent"

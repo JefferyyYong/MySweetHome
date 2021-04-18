@@ -11,10 +11,7 @@ import android.view.MenuItem
 import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
-import com.google.firebase.database.DataSnapshot
-import com.google.firebase.database.DatabaseError
-import com.google.firebase.database.FirebaseDatabase
-import com.google.firebase.database.ValueEventListener
+import com.google.firebase.database.*
 import java.util.*
 
 
@@ -24,6 +21,7 @@ class InspectRoom : AppCompatActivity() {
     lateinit var spinnerRoomNo: Spinner
     lateinit var spinnerStatus: Spinner
     lateinit var etRemarks: EditText
+    lateinit var matchedId: Query
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -81,6 +79,22 @@ class InspectRoom : AppCompatActivity() {
         val toSubmit = findViewById<Button>(R.id.btnSubmit)
 
         toSubmit.setOnClickListener {
+            //To check if the room no. has filed inspection (whether it is matched)
+            val ref = FirebaseDatabase.getInstance().reference
+            //val matchId = ref.child("lostFoundTable").child(roomChecked.toString().trim())
+            val selectedId = spinnerRoomNo.getSelectedItem().toString().trim()
+
+            matchedId =  ref.child("lostFoundTable").child("id").equalTo(selectedId)
+
+            matchedId.addListenerForSingleValueEvent(object : ValueEventListener {
+                override fun onDataChange(dataSnapshot: DataSnapshot) {
+                }
+
+                override fun onCancelled(databaseError: DatabaseError) {
+                    // Handle possible errors.
+                }
+            })
+
             saveRoomInspect()
         }
     }
@@ -88,8 +102,8 @@ class InspectRoom : AppCompatActivity() {
     //Outside oncreate
     private fun saveRoomInspect(){
         //need to save date, location, item, status
-        val room = spinnerRoomNo.getSelectedItem().toString()
-        val status = spinnerStatus.getSelectedItem().toString()
+        val room = spinnerRoomNo.getSelectedItem().toString().trim()
+        val status = spinnerStatus.getSelectedItem().toString().trim()
         val remarks = etRemarks.text.toString().trim()
 
         /* will give reference from root node (if don't want pass anything)
@@ -105,7 +119,7 @@ class InspectRoom : AppCompatActivity() {
         ref.child(id.toString()).setValue(newRoomIns).addOnCompleteListener{
             Toast.makeText(
                 this@InspectRoom,
-                "Room inspection is added successfully",
+                "The room has been inspection successfully",
                 Toast.LENGTH_SHORT
             ).show()
 
@@ -113,7 +127,6 @@ class InspectRoom : AppCompatActivity() {
             startActivity(intent)
         }
     }
-
 
     //Side menu
     override fun onCreateOptionsMenu(menu: Menu): Boolean {

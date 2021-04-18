@@ -43,6 +43,7 @@ class InspectFloor : AppCompatActivity() {
             val arrayAdapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, floorLvl)
             sFloor.adapter = arrayAdapter
 
+            /*
             sFloor.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
                 override fun onItemSelected(parent: AdapterView<*>, view: View, position: Int, id: Long) {
                     Toast.makeText(this@InspectFloor, floorLvl[position], Toast.LENGTH_SHORT).show()
@@ -51,7 +52,7 @@ class InspectFloor : AppCompatActivity() {
                 override fun onNothingSelected(parent: AdapterView<*>) {
                     // Code to perform some action when nothing is selected
                 }
-            }
+            }*/
         }
 
         //Item
@@ -61,6 +62,7 @@ class InspectFloor : AppCompatActivity() {
             val arrayAdapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, item)
             sItem.adapter = arrayAdapter
 
+            /*
             sItem.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
                 override fun onItemSelected(parent: AdapterView<*>, view: View, position: Int, id: Long) {
                     Toast.makeText(this@InspectFloor, item[position], Toast.LENGTH_SHORT).show()
@@ -69,7 +71,7 @@ class InspectFloor : AppCompatActivity() {
                 override fun onNothingSelected(parent: AdapterView<*>) {
                     // Code to perform some action when nothing is selected
                 }
-            }
+            }*/
         }
 
         //Status
@@ -79,6 +81,7 @@ class InspectFloor : AppCompatActivity() {
             val arrayAdapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, status)
             sStatus.adapter = arrayAdapter
 
+            /*
             sStatus.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
                 override fun onItemSelected(parent: AdapterView<*>, view: View, position: Int, id: Long) {
                     Toast.makeText(this@InspectFloor, status[position], Toast.LENGTH_SHORT).show()
@@ -87,7 +90,7 @@ class InspectFloor : AppCompatActivity() {
                 override fun onNothingSelected(parent: AdapterView<*>) {
                     // Code to perform some action when nothing is selected
                 }
-            }
+            }*/
         }
 
         val toSubmit = findViewById<Button>(R.id.btnSubmit)

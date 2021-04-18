@@ -97,6 +97,7 @@ class LostFoundEdit : AppCompatActivity() {
             //set the retrieved spinner data
             sStatus.setSelection(arrayAdapter.getPosition(edit_status))
 
+            /*
             sStatus.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
                 override fun onItemSelected(
                     parent: AdapterView<*>,
@@ -111,7 +112,7 @@ class LostFoundEdit : AppCompatActivity() {
                 override fun onNothingSelected(parent: AdapterView<*>) {
                     // Code to perform some action when nothing is selected
                 }
-            }
+            }*/
         }
 
 

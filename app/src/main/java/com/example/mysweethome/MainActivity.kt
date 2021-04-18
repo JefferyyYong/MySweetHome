@@ -15,8 +15,8 @@ class MainActivity : AppCompatActivity() {
         val signUpChip = findViewById<Chip>(R.id.Signup)
 
         loginChip.setOnClickListener{
-            //val intent = Intent(this, Login::class.java)
-            val intent = Intent(this, LostFoundTable::class.java)
+            val intent = Intent(this, Login::class.java)
+            //val intent = Intent(this, LostFoundTable::class.java)
             //val intent = Intent(this, FrontDesk::class.java)
             startActivity(intent)
         }

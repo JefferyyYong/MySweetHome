@@ -7,7 +7,7 @@ import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import android.widget.*
-import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.*
 
 class InspectFloor : AppCompatActivity() {
 
@@ -16,6 +16,7 @@ class InspectFloor : AppCompatActivity() {
     lateinit var spinnerStatus: Spinner
     lateinit var spinnerItem: Spinner
     lateinit var etRemarks: EditText
+    lateinit var matchedId: Query
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,7 +37,7 @@ class InspectFloor : AppCompatActivity() {
         //
 
         //Confirm floor level (total)
-        val floorLvl = arrayOf("Floor 1","Floor 2","Floor 3", "Floor 4", "Floor")
+        val floorLvl = arrayOf("Floor 1","Floor 2","Floor 3", "Floor 4", "Floor 5")
         val sFloor = findViewById<Spinner>(R.id.spinnerFloor)
         if (sFloor != null) {
             val arrayAdapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, floorLvl)
@@ -92,6 +93,23 @@ class InspectFloor : AppCompatActivity() {
         val toSubmit = findViewById<Button>(R.id.btnSubmit)
 
         toSubmit.setOnClickListener {
+            //To check if the id (floor + item) has filed inspection (whether it is matched)
+            val ref = FirebaseDatabase.getInstance().reference
+            //val matchId = ref.child("lostFoundTable").child(roomChecked.toString().trim())
+            val selectedFloor = spinnerFloor.getSelectedItem().toString().trim()
+            val selectedItem = spinnerItem.getSelectedItem().toString().trim()
+
+            matchedId =  ref.child("lostFoundTable").child("id"+"item").equalTo(selectedFloor + selectedItem)
+
+            matchedId.addListenerForSingleValueEvent(object : ValueEventListener {
+                override fun onDataChange(dataSnapshot: DataSnapshot) {
+                }
+
+                override fun onCancelled(databaseError: DatabaseError) {
+                    // Handle possible errors.
+                }
+            })
+
             saveFloorInspect()
 
         }
@@ -104,7 +122,7 @@ class InspectFloor : AppCompatActivity() {
         val item = spinnerItem.getSelectedItem().toString()
         val status = spinnerStatus.getSelectedItem().toString()
         val remarks = etRemarks.text.toString().trim()
-        val ref = FirebaseDatabase.getInstance().getReference("roomInspectionTable")
+        val ref = FirebaseDatabase.getInstance().getReference("floorInspectionTable")
 
         val id = floor.toString().trim() + item.toString().trim()
 
@@ -113,7 +131,7 @@ class InspectFloor : AppCompatActivity() {
         ref.child(id.toString()).setValue(newFloorIns).addOnCompleteListener{
             Toast.makeText(
                 this@InspectFloor,
-                "Floor inspection is added successfully",
+                "The floor has been inspected successfully",
                 Toast.LENGTH_SHORT
             ).show()
 

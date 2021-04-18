@@ -1,9 +1,9 @@
 package com.example.mysweethome
 
-import android.R.attr.data
 import android.app.DatePickerDialog
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
@@ -21,6 +21,7 @@ class LostFoundAdd : AppCompatActivity() {
     lateinit var spinnerStatus: Spinner
     lateinit var tvTemp: TextView
     lateinit var lfId: String
+    lateinit var currentLast: Query
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -88,39 +89,23 @@ class LostFoundAdd : AppCompatActivity() {
             }
         }
 
-        val ref = FirebaseDatabase.getInstance().getReference("LostFoundTable")
-        var id = 0
-        /*
-        var lastQuery:Query = ref.orderByKey().limitToLast(1)
-        var lastNode: Query = ref.child("id").orderByKey().limitToLast(1)
-        //Toast.makeText(this@LostFoundAdd, "lf" + query.toString(), Toast.LENGTH_SHORT).show()
 
+        val ref = FirebaseDatabase.getInstance().reference
+        currentLast = ref.child("lostFoundTable").orderByKey().limitToLast(1);
 
-        //dbRef = FirebaseDatabase.getInstance().getReference().child("Ranklist");
-        //Query lastQuery = dbRef.orderByKey().limitToLast(1);
-        lastNode.addValueEventListener(object : ValueEventListener {
-            override fun onDataChange(snapshot: DataSnapshot) {
-                for (i in snapshot.children) {
-                    val id = i.getKey().toString()
-                    tvTemp.setText(i.getKey().toString())
-                    Toast.makeText(this@LostFoundAdd, "id?" + id, Toast.LENGTH_LONG).show()
+        currentLast.addListenerForSingleValueEvent(object : ValueEventListener {
+            override fun onDataChange(dataSnapshot: DataSnapshot) {
+                for (ds in dataSnapshot.children) {
+                    val idString = ds.child("id").value.toString()
+                    val id = idString.toInt() + 1
+                    tvTemp.setText(id.toString())
                 }
             }
 
-            override fun onCancelled(error: DatabaseError) {
+            override fun onCancelled(databaseError: DatabaseError) {
+                // Handle possible errors.
             }
-        })*/
-
-        ref.addValueEventListener(object : ValueEventListener {
-            override fun onDataChange(snapshot: DataSnapshot) {
-                id = snapshot.childrenCount.toInt() + 1
-                tvTemp.setText(id.toString())
-            }
-
-            override fun onCancelled(error: DatabaseError) {
-            }
-        });
-
+        })
 
         //Back after "Proceed" button pressed
         val toProceed = findViewById<Button>(R.id.btnProceed)

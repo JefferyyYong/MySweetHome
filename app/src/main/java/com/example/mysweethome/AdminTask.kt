@@ -36,7 +36,7 @@ class AdminTask : AppCompatActivity() {
 
             sStaff.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
                 override fun onItemSelected(parent: AdapterView<*>, view: View, position: Int, id: Long) {
-                    Toast.makeText(this@AdminTask, staffName[position], Toast.LENGTH_SHORT).show()
+                    //Toast.makeText(this@AdminTask, staffName[position], Toast.LENGTH_SHORT).show()
                 }
 
                 override fun onNothingSelected(parent: AdapterView<*>) {
@@ -55,7 +55,7 @@ class AdminTask : AppCompatActivity() {
 
             sFloor.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
                 override fun onItemSelected(parent: AdapterView<*>, view: View, position: Int, id: Long) {
-                    Toast.makeText(this@AdminTask, floorLvl[position], Toast.LENGTH_SHORT).show()
+                    //Toast.makeText(this@AdminTask, floorLvl[position], Toast.LENGTH_SHORT).show()
                 }
 
                 override fun onNothingSelected(parent: AdapterView<*>) {
@@ -65,10 +65,14 @@ class AdminTask : AppCompatActivity() {
         }
 
         val toSubmit = findViewById<Button>(R.id.btnSubmit)
+        val nxt = findViewById<Button>(R.id.btnSubmit2)
 
         toSubmit.setOnClickListener {
             saveTask()
-            val intent = Intent(this, HousekeepingMenu::class.java)
+        }
+
+        nxt.setOnClickListener {
+            val intent = Intent(this, AdminTask2::class.java)
             startActivity(intent)
         }
     }

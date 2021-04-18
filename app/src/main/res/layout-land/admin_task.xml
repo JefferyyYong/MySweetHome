@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AdminTask">
+
+    <android.widget.Button
+        android:id="@+id/btnSubmit2"
+        android:layout_width="130dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="92dp"
+        android:layout_marginTop="88dp"
+        android:background="@drawable/rounded_corners"
+        android:backgroundTint="#F2C94C"
+        android:text="View"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/remark"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerFloor" />
+
+    <TextView
+        android:id="@+id/tvRemarks3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="308dp"
+        android:layout_marginTop="16dp"
+        android:text="Floor:"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.009"
+        app:layout_constraintStart_toEndOf="@+id/tvRemarks2"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvRemarks2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        android:text="Staff:"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Spinner
+        android:id="@+id/spinnerStaff"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="24dp"
+        android:background="#dff2fa"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvRemarks2" />
+
+    <Spinner
+        android:id="@+id/spinnerFloor"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="104dp"
+        android:background="#dff2fa"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/spinnerStaff"
+        app:layout_constraintTop_toBottomOf="@+id/tvRemarks3" />
+
+    <TextView
+        android:id="@+id/tvRemarks"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="@string/remarks"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.036"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerStaff" />
+
+    <EditText
+        android:id="@+id/remark"
+        android:layout_width="250dp"
+        android:layout_height="150dp"
+        android:layout_marginStart="24dp"
+        android:autofillHints=""
+        android:background="#dff2fa"
+        android:ems="10"
+        android:gravity="start|top"
+        android:inputType="textMultiLine"
+        android:labelFor="@id/remark"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvRemarks" />
+
+    <android.widget.Button
+        android:id="@+id/btnSubmit"
+        android:layout_width="130dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="88dp"
+        android:background="@drawable/rounded_corners"
+        android:backgroundTint="#F2C94C"
+        android:text="@string/btn_submit"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/btnSubmit2"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerFloor" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

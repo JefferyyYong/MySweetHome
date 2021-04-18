@@ -14,10 +14,10 @@ class MainActivity : AppCompatActivity() {
         val loginChip = findViewById<Chip>(R.id.Login)
         val signUpChip = findViewById<Chip>(R.id.Signup)
 
-
         loginChip.setOnClickListener{
-            val intent = Intent(this, Login::class.java)
-            //val intent = Intent(this, CheckInRoomStatus::class.java)
+            //val intent = Intent(this, Login::class.java)
+            //val intent = Intent(this, AdminMenu::class.java)
+            val intent = Intent(this, AdminMenu::class.java)
             startActivity(intent)
         }
 

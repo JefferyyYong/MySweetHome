@@ -9,16 +9,26 @@
         android:layout_height = "wrap_content">
 
         <TextView
+            android:id = "@+id/tvNo"
+            android:layout_width = "0dp"
+            android:layout_height = "match_parent"
+            android:layout_weight = "1"
+            android:background = "@drawable/table_border"
+            android:ellipsize = "end"
+            android:padding = "5dp"
+            android:text = "1"
+            android:singleLine = "true" />
+
+        <TextView
             android:id = "@+id/tvDate"
-            android:layout_width="30dp"
+            android:layout_width = "0dp"
             android:layout_height = "match_parent"
             android:layout_weight = "1"
             android:background = "@drawable/table_border"
             android:ellipsize = "end"
             android:padding = "5dp"
             android:text = "@string/lf_date"
-            android:singleLine = "true"
-            android:clickable="false"/>
+            android:singleLine = "true" />
 
         <TextView
             android:id = "@+id/tvLocation"
@@ -29,8 +39,7 @@
             android:ellipsize = "end"
             android:padding = "5dp"
             android:text = "@string/lf_location"
-            android:singleLine = "true"
-            android:clickable="false"/>
+            android:singleLine = "true" />
 
         <TextView
             android:id = "@+id/tvItem"
@@ -41,8 +50,7 @@
             android:ellipsize = "end"
             android:padding = "5dp"
             android:text = "@string/lf_item"
-            android:singleLine = "true"
-            android:clickable="false"/>
+            android:singleLine = "true" />
 
         <TextView
             android:id = "@+id/tvStatus"
@@ -53,8 +61,7 @@
             android:ellipsize = "end"
             android:padding = "5dp"
             android:text = "@string/lf_status"
-            android:singleLine = "true"
-            android:clickable="false"/>
+            android:singleLine = "true" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

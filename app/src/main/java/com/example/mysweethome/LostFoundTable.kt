@@ -66,18 +66,20 @@ class LostFoundTable : AppCompatActivity() {
 
             //Store value into variable
             //val row = listView.getItemIdAtPosition(position).toString()
-            val row = listView.getItemIdAtPosition(position).toString()
+            //val row = listView.getItemIdAtPosition(position).toString()
             //val id = listView.getItemAtPosition(row)
+            val num = (view?.findViewById<View>(R.id.tvNo) as TextView).text.toString()
             val date = (view?.findViewById<View>(R.id.tvDate) as TextView).text.toString()
             val location = (view?.findViewById<View>(R.id.tvLocation) as TextView).text.toString()
             val item = (view?.findViewById<View>(R.id.tvItem) as TextView).text.toString()
             val status = (view?.findViewById<View>(R.id.tvStatus) as TextView).text.toString()
 
-            //Toast.makeText(getApplicationContext(), row, Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), num, Toast.LENGTH_SHORT).show();
 
             editBtn.setOnClickListener {
                 val intent = Intent(this, LostFoundEdit::class.java)
-                intent.putExtra("selected_row", row) //Start from row 0
+                intent.putExtra("selected_id", num)
+                //intent.putExtra("selected_row", row) //Start from row 0
                 intent.putExtra("selected_date", date)
                 intent.putExtra("selected_loc", location)
                 intent.putExtra("selected_item", item)

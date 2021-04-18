@@ -44,7 +44,7 @@ class LostFoundEdit : AppCompatActivity() {
         //listView.getChildAt(2)
         //intent.getSerializableExtra("lostFoundTable") as lostFoundTable
 
-        val edit_row = intent.getStringExtra("selected_row").toString()
+        val edit_id = intent.getStringExtra("selected_id").toString()
         val edit_date = intent.getStringExtra("selected_date").toString()
         val edit_loc = intent.getStringExtra("selected_loc").toString()
         val edit_item = intent.getStringExtra("selected_item").toString()
@@ -124,8 +124,7 @@ class LostFoundEdit : AppCompatActivity() {
         toUpdate.setOnClickListener {
             //Toast.makeText(applicationContext, edit_row, Toast.LENGTH_LONG).show()
 
-
-            //id = "-MYPIEdyhuEdggThgNb1"
+            id = edit_id
             val date = etDate.text.toString()
             val location = etLocation.text.toString()
             val item = etItem.text.toString()

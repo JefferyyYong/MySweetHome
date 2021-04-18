@@ -8,7 +8,7 @@
 
 
     <EditText
-        android:id="@+id/editTextTextMultiLine"
+        android:id="@+id/etRemarks"
         android:layout_width="250dp"
         android:layout_height="100dp"
         android:layout_marginTop="4dp"
@@ -17,7 +17,7 @@
         android:ems="10"
         android:gravity="start|top"
         android:inputType="textMultiLine"
-        android:labelFor="@id/editTextTextMultiLine"
+        android:labelFor="@id/etRemarks"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
@@ -42,7 +42,7 @@
         android:text="@string/floor"
         android:textColor="@color/black"
         android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/spinnerFoor"
+        app:layout_constraintBottom_toTopOf="@+id/spinnerFloor"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.216"
         app:layout_constraintStart_toStartOf="parent" />
@@ -59,7 +59,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <Spinner
-        android:id="@+id/spinnerFoor"
+        android:id="@+id/spinnerFloor"
         android:layout_width="250dp"
         android:layout_height="50dp"
         android:layout_marginBottom="44dp"
@@ -86,20 +86,17 @@
         android:id="@+id/btnSubmit"
         android:layout_width="130dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
-        android:layout_marginBottom="68dp"
+        android:layout_marginTop="36dp"
+        android:background="@drawable/rounded_corners"
         android:backgroundTint="#F2C94C"
         android:text="@string/btn_submit"
-        android:textColor="#000000"
-        android:background="@drawable/rounded_corners"
-        android:textStyle="bold"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:textColor="#000000"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.484"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextMultiLine"
-        app:layout_constraintVertical_bias="0.404" />
+        app:layout_constraintTop_toBottomOf="@+id/etRemarks" />
 
     <TextView
         android:id="@+id/tvStatus"
@@ -124,7 +121,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.213"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinnerFoor"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerFloor"
         app:layout_constraintVertical_bias="1.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

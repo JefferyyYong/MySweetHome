@@ -7,8 +7,16 @@ import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import android.widget.*
+import com.google.firebase.database.FirebaseDatabase
 
 class InspectFloor : AppCompatActivity() {
+
+    //DB use
+    lateinit var spinnerFloor: Spinner
+    lateinit var spinnerStatus: Spinner
+    lateinit var spinnerItem: Spinner
+    lateinit var etRemarks: EditText
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.inspect_floor)
@@ -19,9 +27,16 @@ class InspectFloor : AppCompatActivity() {
         actionbar!!.title = "Inspect by Floor"
         actionbar.setDisplayHomeAsUpEnabled(true)
 
+        //DB use
+        spinnerFloor = findViewById<Spinner>(R.id.spinnerFloor)
+        spinnerItem = findViewById<Spinner>(R.id.spinnerItem)
+        spinnerStatus = findViewById<Spinner>(R.id.spinnerStatus)
+        etRemarks = findViewById<EditText>(R.id.etRemarks)
+        //tvTemp = findViewById<TextView>(R.id.tvTemp)
+        //
 
         //Confirm floor level (total)
-        val floorLvl = arrayOf("Floor", "Floor 1","Floor 2","Floor 3")
+        val floorLvl = arrayOf("Floor 1","Floor 2","Floor 3", "Floor 4", "Floor")
         val sFloor = findViewById<Spinner>(R.id.spinnerFloor)
         if (sFloor != null) {
             val arrayAdapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, floorLvl)
@@ -38,7 +53,7 @@ class InspectFloor : AppCompatActivity() {
             }
         }
 
-        //Status
+        //Item
         val item = arrayOf("Lighting", "Fire extinguisher", "Lift", "Corridor")
         val sItem = findViewById<Spinner>(R.id.spinnerItem)
         if (sItem != null) {
@@ -77,6 +92,31 @@ class InspectFloor : AppCompatActivity() {
         val toSubmit = findViewById<Button>(R.id.btnSubmit)
 
         toSubmit.setOnClickListener {
+            saveFloorInspect()
+
+        }
+    }
+
+    //Outside oncreate
+    private fun saveFloorInspect(){
+        //need to save date, location, item, status
+        val floor = spinnerFloor.getSelectedItem().toString()
+        val item = spinnerItem.getSelectedItem().toString()
+        val status = spinnerStatus.getSelectedItem().toString()
+        val remarks = etRemarks.text.toString().trim()
+        val ref = FirebaseDatabase.getInstance().getReference("roomInspectionTable")
+
+        val id = floor.toString().trim() + item.toString().trim()
+
+        val newFloorIns = InspectionFloor(id.toString(), floor, item, status, remarks)
+
+        ref.child(id.toString()).setValue(newFloorIns).addOnCompleteListener{
+            Toast.makeText(
+                this@InspectFloor,
+                "Floor inspection is added successfully",
+                Toast.LENGTH_SHORT
+            ).show()
+
             val intent = Intent(this, InspectMenu::class.java)
             startActivity(intent)
         }

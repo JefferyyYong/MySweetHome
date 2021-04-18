@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.TextView
+import org.w3c.dom.Text
 
 class LostFoundAdapter(val mCtx: Context, val layoutResId: Int, val lostFoundList: List<LostFound>)
     :ArrayAdapter<LostFound>(mCtx, layoutResId, lostFoundList){
@@ -16,6 +17,7 @@ class LostFoundAdapter(val mCtx: Context, val layoutResId: Int, val lostFoundLis
         val layoutInflater: LayoutInflater = LayoutInflater.from(mCtx);
         val view:View = layoutInflater.inflate(layoutResId, null)
 
+        val textViewId = view.findViewById<TextView>(R.id.tvNo)
         val textViewDate = view.findViewById<TextView>(R.id.tvDate)
         val textViewLocation = view.findViewById<TextView>(R.id.tvLocation)
         val textViewItem = view.findViewById<TextView>(R.id.tvItem)
@@ -23,6 +25,7 @@ class LostFoundAdapter(val mCtx: Context, val layoutResId: Int, val lostFoundLis
 
         val lf = lostFoundList[position]
 
+        textViewId.text = lf.id
         textViewDate.text = lf.date
         textViewLocation.text = lf.location
         textViewItem.text = lf.item

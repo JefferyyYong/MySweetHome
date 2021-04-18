@@ -11,10 +11,20 @@ import android.view.MenuItem
 import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
 import java.util.*
 
 
 class InspectRoom : AppCompatActivity() {
+
+    //DB use
+    lateinit var spinnerRoomNo: Spinner
+    lateinit var spinnerStatus: Spinner
+    lateinit var etRemarks: EditText
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,6 +35,12 @@ class InspectRoom : AppCompatActivity() {
         //back button
         actionbar!!.title = "Inspect by Room"
         actionbar.setDisplayHomeAsUpEnabled(true)
+
+        //DB use
+        spinnerRoomNo = findViewById<Spinner>(R.id.spinnerRoomNo)
+        spinnerStatus = findViewById<Spinner>(R.id.spinnerStatus)
+        etRemarks = findViewById<EditText>(R.id.etRemarks)
+        //tvTemp = findViewById<TextView>(R.id.tvTemp)
 
         //The room no. need to get from database?
         val roomNo = arrayOf("101","102","103","201","202", "203", "301","302","303","401","402", "403")
@@ -65,10 +81,39 @@ class InspectRoom : AppCompatActivity() {
         val toSubmit = findViewById<Button>(R.id.btnSubmit)
 
         toSubmit.setOnClickListener {
+            saveRoomInspect()
+        }
+    }
+
+    //Outside oncreate
+    private fun saveRoomInspect(){
+        //need to save date, location, item, status
+        val room = spinnerRoomNo.getSelectedItem().toString()
+        val status = spinnerStatus.getSelectedItem().toString()
+        val remarks = etRemarks.text.toString().trim()
+
+        /* will give reference from root node (if don't want pass anything)
+        val ref = FirebaseDatabase.getInstance().reference*/
+        //val xx = entityclass(value to pass, ...)
+
+        val ref = FirebaseDatabase.getInstance().getReference("roomInspectionTable")
+
+        val id = room.toString().trim()
+
+        val newRoomIns = InspectionRoom(id.toString(), room, status, remarks)
+
+        ref.child(id.toString()).setValue(newRoomIns).addOnCompleteListener{
+            Toast.makeText(
+                this@InspectRoom,
+                "Room inspection is added successfully",
+                Toast.LENGTH_SHORT
+            ).show()
+
             val intent = Intent(this, InspectMenu::class.java)
             startActivity(intent)
         }
     }
+
 
     //Side menu
     override fun onCreateOptionsMenu(menu: Menu): Boolean {

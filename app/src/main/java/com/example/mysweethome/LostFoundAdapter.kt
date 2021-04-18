@@ -6,13 +6,13 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.TextView
-import org.w3c.dom.Text
 
-class LostFoundAdapter (val mCtx: Context, val layoutResId: Int, val lostFoundList: List<LostFound>)
-    :ArrayAdapter<LostFound>(mCtx,layoutResId,lostFoundList){
+class LostFoundAdapter(val mCtx: Context, val layoutResId: Int, val lostFoundList: List<LostFound>)
+    :ArrayAdapter<LostFound>(mCtx, layoutResId, lostFoundList){
 
     override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
         //return super.getView(position, convertView, parent)
+
         val layoutInflater: LayoutInflater = LayoutInflater.from(mCtx);
         val view:View = layoutInflater.inflate(layoutResId, null)
 
@@ -30,5 +30,6 @@ class LostFoundAdapter (val mCtx: Context, val layoutResId: Int, val lostFoundLi
 
         return view;
     }
-}
 
+
+}

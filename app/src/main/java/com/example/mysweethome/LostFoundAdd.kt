@@ -68,8 +68,8 @@ class LostFoundAdd : AppCompatActivity() {
                     position: Int,
                     id: Long
                 ) {
-                    Toast.makeText(this@LostFoundAdd, itemStatus[position], Toast.LENGTH_SHORT)
-                        .show()
+                    //Toast.makeText(this@LostFoundAdd, itemStatus[position], Toast.LENGTH_SHORT)
+                    //    .show()
                 }
 
                 override fun onNothingSelected(parent: AdapterView<*>) {
@@ -88,6 +88,7 @@ class LostFoundAdd : AppCompatActivity() {
 
     }
 
+    //Outside onCreate()
     //DB use
     private fun saveLostFound(){
         //need to save date, location, item, status
@@ -126,7 +127,7 @@ class LostFoundAdd : AppCompatActivity() {
         val lf = LostFound(lfId.toString(), date, location, item, sStatus)
 
         ref.child(lfId.toString()).setValue(lf).addOnCompleteListener{
-            Toast.makeText(applicationContext, "New lost found item saved successfully", Toast.LENGTH_LONG).show()
+            Toast.makeText(applicationContext, "New lost and found item saved successfully", Toast.LENGTH_LONG).show()
             val intent = Intent(this, LostFoundTable::class.java)
             startActivity(intent)
         }

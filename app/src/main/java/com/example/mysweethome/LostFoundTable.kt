@@ -3,9 +3,8 @@ package com.example.mysweethome
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
-import android.widget.ListView
-import android.widget.TextView
+import android.view.View
+import android.widget.*
 import com.google.firebase.database.*
 
 class LostFoundTable : AppCompatActivity() {
@@ -24,6 +23,7 @@ class LostFoundTable : AppCompatActivity() {
         actionbar!!.title = "Lost and Found"
         actionbar.setDisplayHomeAsUpEnabled(true)
 
+        //for database use
         lostFoundList = mutableListOf()
         ref = FirebaseDatabase.getInstance().getReference("lostFoundTable")
         listView = findViewById(R.id.listview)
@@ -36,10 +36,6 @@ class LostFoundTable : AppCompatActivity() {
             startActivity(intent)
         }
 
-        editBtn.setOnClickListener {
-            val intent = Intent(this, LostFoundEdit::class.java)
-            startActivity(intent)
-        }
 
         //To read value from firebase
         ref.addValueEventListener(object: ValueEventListener{
@@ -55,16 +51,47 @@ class LostFoundTable : AppCompatActivity() {
 
                     val adapter = LostFoundAdapter(applicationContext, R.layout.lostfound_listview_row, lostFoundList)
                     listView.adapter = adapter
+                    //this.setAdapter(adapter)
                 }
-
             }
 
             override fun onCancelled(error: DatabaseError) {
-                TODO("Not yet implemented")
             }
+
         });
+
+        listView.setOnItemClickListener{
+                parent: AdapterView<*>?, view: View?, position: Int, id: Long ->
+            //Toast.makeText(applicationContext, "found", Toast.LENGTH_LONG).show()
+
+            //Store value into variable
+            //val row = listView.getItemIdAtPosition(position).toString()
+            val row = listView.getItemIdAtPosition(position).toString()
+            //val id = listView.getItemAtPosition(row)
+            val date = (view?.findViewById<View>(R.id.tvDate) as TextView).text.toString()
+            val location = (view?.findViewById<View>(R.id.tvLocation) as TextView).text.toString()
+            val item = (view?.findViewById<View>(R.id.tvItem) as TextView).text.toString()
+            val status = (view?.findViewById<View>(R.id.tvStatus) as TextView).text.toString()
+
+            //Toast.makeText(getApplicationContext(), row, Toast.LENGTH_SHORT).show();
+
+            editBtn.setOnClickListener {
+                val intent = Intent(this, LostFoundEdit::class.java)
+                intent.putExtra("selected_row", row) //Start from row 0
+                intent.putExtra("selected_date", date)
+                intent.putExtra("selected_loc", location)
+                intent.putExtra("selected_item", item)
+                intent.putExtra("selected_status", status)
+                startActivity(intent)
+            }
+
+            //Toast.makeText(getApplicationContext(), "Date: " + date +"\n" +"Location : " + location +"\n"
+            //            +"Item: " +item +"\n" +"Status: " +status, Toast.LENGTH_SHORT).show();
+        }
+
     }
 
+    //outside onCreate()
     //back button
     override fun onSupportNavigateUp(): Boolean {
         onBackPressed()

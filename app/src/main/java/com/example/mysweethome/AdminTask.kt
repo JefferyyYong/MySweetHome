@@ -72,7 +72,7 @@ class AdminTask : AppCompatActivity() {
         }
 
         nxt.setOnClickListener {
-            val intent = Intent(this, AdminTask2::class.java)
+            val intent = Intent(this, AdminTaskList::class.java)
             startActivity(intent)
         }
     }

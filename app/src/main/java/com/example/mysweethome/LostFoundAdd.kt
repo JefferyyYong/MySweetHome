@@ -72,6 +72,7 @@ class LostFoundAdd : AppCompatActivity() {
             val arrayAdapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, itemStatus)
             spinnerStatus.adapter = arrayAdapter
 
+            /*
             spinnerStatus.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
                 override fun onItemSelected(
                     parent: AdapterView<*>,
@@ -86,7 +87,7 @@ class LostFoundAdd : AppCompatActivity() {
                 override fun onNothingSelected(parent: AdapterView<*>) {
                     // Code to perform some action when nothing is selected
                 }
-            }
+            }*/
         }
 
 

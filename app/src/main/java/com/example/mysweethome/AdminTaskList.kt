@@ -10,11 +10,11 @@ import android.widget.EditText
 import android.widget.TextView
 import com.google.firebase.database.*
 
-class AdminTask2 : AppCompatActivity() {
+class AdminTaskList : AppCompatActivity() {
     lateinit var ref: DatabaseReference
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.admin_task2)
+        setContentView(R.layout.admin_task_list)
 
         val iName = findViewById<EditText>(R.id.sIName)
         val oName = findViewById<TextView>(R.id.sName)

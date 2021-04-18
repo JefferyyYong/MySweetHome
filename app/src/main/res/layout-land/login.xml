@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Login">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="733dp"
+        android:layout_height="411dp"
+        android:background="#FFFFFF"
+        android:contentDescription="@string/todo"
+        android:scaleX="4.0"
+        android:scaleY="2"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/sample4"
+        tools:visibility="visible" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="334dp"
+        android:layout_height="124dp"
+        android:contentDescription="@string/todo"
+        android:scaleX="1.5"
+        android:scaleY="1.5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/imageedit_18_3429512413" />
+
+    <LinearLayout
+        android:layout_width="472dp"
+        android:layout_height="201dp"
+        android:background="@drawable/my_shape"
+        android:orientation="vertical"
+        android:textColor="#ffffff"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView3">
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_weight="1"
+            android:text="Email:"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="25sp" />
+
+        <EditText
+            android:id="@+id/login_email"
+            android:layout_width="match_parent"
+            android:layout_height="67dp"
+            android:layout_weight="1"
+            android:ems="0"
+            android:inputType="textPersonName"
+            android:textAlignment="center"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="53dp"
+            android:layout_weight="1"
+            android:text="Password:"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="25sp" />
+
+        <EditText
+            android:id="@+id/login_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ems="10"
+            android:inputType="numberPassword"
+            android:textColor="@color/black" />
+
+        <Button
+            android:id="@+id/loginBtn"
+            android:layout_width="113dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:background="#F8EDD631"
+            android:includeFontPadding="false"
+            android:paddingBottom="4dp"
+            android:text="Login"
+            android:textColor="#000000"
+            app:backgroundTint="#F8EDD631" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

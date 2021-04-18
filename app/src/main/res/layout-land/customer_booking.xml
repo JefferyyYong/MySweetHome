@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CustomerDetails">
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="303dp"
+        android:layout_height="44dp"
+        android:layout_marginStart="152dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="141dp"
+        android:text="Customer Booking"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.533"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="150dp"
+        android:layout_height="38dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:translationX="10sp"
+        app:layout_constraintStart_toEndOf="@+id/textView12"
+        app:layout_constraintTop_toBottomOf="@+id/textView11" />
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="150dp"
+        android:layout_height="37dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="8dp"
+        android:text="Room Type:"
+        android:textAlignment="viewEnd"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView11" />
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="167dp"
+        android:layout_height="39dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="16dp"
+        android:text="Check-in Date:"
+        android:textAlignment="viewEnd"
+        android:textColor="@color/black"
+        android:textColorHint="#FFFFFF"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView12" />
+
+    <TextView
+        android:id="@+id/textView14"
+        android:layout_width="167dp"
+        android:layout_height="39dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="24dp"
+        android:text="Check-out Date:"
+        android:textAlignment="viewEnd"
+        android:textColor="@color/black"
+        android:textColorHint="#FFFFFF"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView13" />
+
+    <TextView
+        android:id="@+id/textView15"
+        android:layout_width="50sp"
+        android:layout_height="39dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:text="PAX:"
+        android:textAlignment="viewEnd"
+        android:textColor="@color/black"
+        android:textColorHint="#FFFFFF"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toStartOf="@+id/paxNo"
+        app:layout_constraintTop_toBottomOf="@+id/totalPrice" />
+
+    <TextView
+        android:id="@+id/textView16"
+        android:layout_width="167dp"
+        android:layout_height="39dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="10dp"
+        android:text="Amount:"
+        android:textAlignment="viewEnd"
+        android:textColor="@color/black"
+        android:textColorHint="#FFFFFF"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toStartOf="@+id/price"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView14" />
+
+    <TextView
+        android:id="@+id/textView17"
+        android:layout_width="167dp"
+        android:layout_height="39dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="8dp"
+        android:text="Deposit:"
+        android:textAlignment="viewEnd"
+        android:textColor="@color/black"
+        android:textColorHint="#FFFFFF"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toStartOf="@+id/deposit"
+        app:layout_constraintTop_toBottomOf="@+id/textView15" />
+
+    <TextView
+        android:id="@+id/textView18"
+        android:layout_width="167dp"
+        android:layout_height="39dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="8dp"
+        android:text="Total:"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textColorHint="#FFFFFF"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toStartOf="@+id/priceGener"
+        app:layout_constraintTop_toBottomOf="@+id/textView11" />
+
+    <EditText
+        android:id="@+id/paxNo"
+        android:layout_width="52dp"
+        android:layout_height="59dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="128dp"
+        android:ems="10"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/priceGener" />
+
+    <TextView
+        android:id="@+id/price"
+        android:layout_width="102dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="88dp"
+        android:ems="10"
+        android:inputType="number"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toStartOf="@+id/textView17"
+        app:layout_constraintTop_toBottomOf="@+id/dateTv2" />
+
+    <TextView
+        android:id="@+id/deposit"
+        android:layout_width="93dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="84dp"
+        android:ems="10"
+        android:inputType="number"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/paxNo" />
+
+    <TextView
+        android:id="@+id/totalPrice"
+        android:layout_width="100sp"
+        android:layout_height="35sp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="180dp"
+        android:textAlignment="textStart"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView18" />
+
+    <Button
+        android:id="@+id/nextBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="36dp"
+        android:text="Next"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        app:backgroundTint="#D7F8C839"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/priceGener"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="36dp"
+        android:text="Price"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        app:backgroundTint="#D7F8C839"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nextBtn" />
+
+    <Button
+        android:id="@+id/pickDateBtn"
+        android:layout_width="80sp"
+        android:layout_height="58sp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="12dp"
+        android:text="Pick Date"
+        android:textColor="@color/black"
+        android:visibility="visible"
+        app:backgroundTint="#D7F8C839"
+        app:layout_constraintStart_toEndOf="@+id/dateTv"
+        app:layout_constraintTop_toBottomOf="@+id/spinner" />
+
+    <TextView
+        android:id="@+id/dateTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:text="Date"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/textView13"
+        app:layout_constraintTop_toBottomOf="@+id/spinner" />
+
+    <Button
+        android:id="@+id/pickDateBtn2"
+        android:layout_width="80sp"
+        android:layout_height="58sp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="4dp"
+        android:text="Pick Date"
+        android:textColor="@color/black"
+        android:visibility="visible"
+        app:backgroundTint="#D7F8C839"
+        app:layout_constraintStart_toEndOf="@+id/dateTv2"
+        app:layout_constraintTop_toBottomOf="@+id/pickDateBtn" />
+
+    <TextView
+        android:id="@+id/dateTv2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="28dp"
+        android:text="Date"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/textView14"
+        app:layout_constraintTop_toBottomOf="@+id/dateTv" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -47,6 +47,7 @@ class InspectRoom : AppCompatActivity() {
             val arrayAdapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, roomNo)
             sRoom.adapter = arrayAdapter
 
+            /*
             sRoom.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
                 override fun onItemSelected(parent: AdapterView<*>, view: View, position: Int, id: Long) {
                     Toast.makeText(this@InspectRoom, roomNo[position], Toast.LENGTH_SHORT).show()
@@ -55,7 +56,7 @@ class InspectRoom : AppCompatActivity() {
                 override fun onNothingSelected(parent: AdapterView<*>) {
                     // Code to perform some action when nothing is selected
                 }
-            }
+            }*/
         }
 
         //Status
@@ -65,6 +66,7 @@ class InspectRoom : AppCompatActivity() {
             val arrayAdapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, status)
             sStatus.adapter = arrayAdapter
 
+                /*
             sStatus.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
                 override fun onItemSelected(parent: AdapterView<*>, view: View, position: Int, id: Long) {
                     Toast.makeText(this@InspectRoom, status[position], Toast.LENGTH_SHORT).show()
@@ -73,7 +75,7 @@ class InspectRoom : AppCompatActivity() {
                 override fun onNothingSelected(parent: AdapterView<*>) {
                     // Code to perform some action when nothing is selected
                 }
-            }
+            }*/
         }
 
         val toSubmit = findViewById<Button>(R.id.btnSubmit)

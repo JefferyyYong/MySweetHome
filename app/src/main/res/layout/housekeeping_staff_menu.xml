@@ -38,7 +38,7 @@
         app:strokeColor="#F2C94C" />
 
     <TextView
-        android:id="@+id/textView19"
+        android:id="@+id/tvWelcome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="144dp"
@@ -59,7 +59,7 @@
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.129"
-        app:layout_constraintStart_toEndOf="@+id/textView19"
+        app:layout_constraintStart_toEndOf="@+id/tvWelcome"
         app:layout_constraintTop_toTopOf="parent" />
 
 

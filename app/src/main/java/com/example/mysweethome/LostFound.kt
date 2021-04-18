@@ -1,8 +1,9 @@
 package com.example.mysweethome
 
 //database use
-class LostFound (val id: String, val date: String, val location: String, val item: String, val status: String) {
+class LostFound (var id: String, var date: String, var location: String, var item: String, var status: String)  {
 
     //blank/initial constructor
     constructor() : this("", "", "", "", ""){}
+
 }

@@ -50,7 +50,9 @@ class CustMenu : AppCompatActivity() {
         }
 
         custReservationBtn.setOnClickListener {
+            //var x = intent.getStringExtra("CustomerEmail").toString()
             val intent = Intent(this, CustReservation::class.java)
+            //intent.putExtra("CustomerEmail",x) //test
             startActivity(intent)
         }
 

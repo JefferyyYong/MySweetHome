@@ -3,6 +3,7 @@ package com.example.mysweethome
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.ListView
 import android.widget.TextView
@@ -21,8 +22,8 @@ class ReservationHistory : AppCompatActivity() {
     var list = ArrayList<String>()
    // lateinit var adapter: ArrayAdapter<String>
     lateinit var history: History
-
-
+    lateinit var custEmail:String
+    lateinit var fCustEmail:String
     var adapter: FirebaseListAdapter<*>? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -38,7 +39,7 @@ class ReservationHistory : AppCompatActivity() {
 
         val homeBtn = findViewById<ImageView>(R.id.ivHomepage)
         //val searchIcon = findViewById<ImageView>(R.id.ivSearch)
-
+        val searchHis = findViewById<Button>(R.id.searchHis)
         //back button
         val actionbar = supportActionBar
         //back button
@@ -49,13 +50,16 @@ class ReservationHistory : AppCompatActivity() {
         val user = FirebaseAuth.getInstance().currentUser
         if (user != null) {
             val userEmail = user.email
-            val ref = FirebaseDatabase.getInstance().getReference("custReservationTable").orderByChild("email").equalTo(userEmail)
+            custEmail = userEmail.replace("@","")
+            fCustEmail = custEmail.replace(".","")
+            val ref = FirebaseDatabase.getInstance().getReference("custReservationTable").child(fCustEmail).orderByChild("email").equalTo(userEmail)
             getData(ref)
         } else {
             // No user is signed in
         }
 
         homeBtn.setOnClickListener {
+
             val intent = Intent(this, CustMenu::class.java)
             startActivity(intent)
         }
@@ -86,6 +90,12 @@ class ReservationHistory : AppCompatActivity() {
             dpd.show()
 
         }*/
+        searchHis.setOnClickListener {
+            var x = fCustEmail
+            val intent = Intent(this, Reservation_History_Details::class.java)
+            intent.putExtra("FCustEmail",x)
+            startActivity(intent)
+        }
 
     }
 

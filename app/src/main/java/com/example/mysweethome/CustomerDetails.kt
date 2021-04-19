@@ -56,9 +56,9 @@ class CustomerDetails : AppCompatActivity() {
         mPickTimeBtn.setOnClickListener {
             val dpd = DatePickerDialog(
                 this,
-                DatePickerDialog.OnDateSetListener { view, year, monthOfYear, dayOfMonth ->
+                DatePickerDialog.OnDateSetListener { view, year, month, dayOfMonth ->
                     // Display Selected date in TextView
-                    textView.setText("" + month + "/" + dayOfMonth + "/" + year)
+                    textView.setText("" + (month+1) + "/" + dayOfMonth + "/" + year)
                 },
                 year,
                 month,
@@ -70,9 +70,9 @@ class CustomerDetails : AppCompatActivity() {
         mPickTimeBtn2.setOnClickListener {
             val dpd = DatePickerDialog(
                 this,
-                DatePickerDialog.OnDateSetListener { view, year, monthOfYear, dayOfMonth ->
+                DatePickerDialog.OnDateSetListener { view, year, month, dayOfMonth ->
                     // Display Selected date in TextView
-                    textView2.setText("" + month + "/" + dayOfMonth + "/" + year)
+                    textView2.setText("" + (month+1) + "/" + dayOfMonth + "/" + year)
                 },
                 year,
                 month,

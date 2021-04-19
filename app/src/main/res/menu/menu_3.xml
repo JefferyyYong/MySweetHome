@@ -8,7 +8,12 @@
         android:title="Housekeeping Menu"
         />
 
+
     <item android:id="@+id/Item2"
         android:title="      Lost and Found"
+        />
+
+    <item android:id="@+id/Item3"
+        android:title="      View Task"
         />
 </menu>

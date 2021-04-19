@@ -5,6 +5,8 @@ import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import android.view.View
 import android.widget.*
 import java.util.*
@@ -22,6 +24,7 @@ class LostFoundEdit : AppCompatActivity() {
     lateinit var id:String
     lateinit var lostFoundList: MutableList<LostFound>
     lateinit var lostFound: LostFound
+    lateinit var loginName: String
 
     //DB use
     lateinit var etDate: EditText
@@ -33,6 +36,9 @@ class LostFoundEdit : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.lost_found_edit)
+
+        //
+        loginName = intent.getStringExtra("HKS1").toString()
 
         //back button
         val actionbar = supportActionBar
@@ -96,28 +102,8 @@ class LostFoundEdit : AppCompatActivity() {
 
             //set the retrieved spinner data
             sStatus.setSelection(arrayAdapter.getPosition(edit_status))
-
-            /*
-            sStatus.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-                override fun onItemSelected(
-                    parent: AdapterView<*>,
-                    view: View,
-                    position: Int,
-                    id: Long
-                ) {
-                    //Toast.makeText(this@LostFoundEdit, itemStatus[position], Toast.LENGTH_SHORT)
-                    //    .show()
-                }
-
-                override fun onNothingSelected(parent: AdapterView<*>) {
-                    // Code to perform some action when nothing is selected
-                }
-            }*/
         }
 
-
-
-        //Toast.makeText(getApplicationContext(), "Hi" + lostFoundList, Toast.LENGTH_SHORT).show();
 
 
         val toUpdate = findViewById<Button>(R.id.btnUpdate)
@@ -133,24 +119,6 @@ class LostFoundEdit : AppCompatActivity() {
 
             updateLF(id, date, location, item, status)
 
-            /*
-            selected.addListenerForSingleValueEvent(object: ValueEventListener{
-                override fun onDataChange(snapshot: DataSnapshot) {
-                    for (lfSnapshot in snapshot.children){
-                        //val current_id = lfSnapshot.child("id").value.toString()
-                        val selectedRow = ref.child("lostFoundTable").orderByChild("id").equalTo(edit_row)
-                        tryUpdate(selectedRow)
-                    }
-                }
-
-                override fun onCancelled(error: DatabaseError) {
-                    TODO("Not yet implemented")
-                }
-            })
-            //var lf =
-
-            val intent = Intent(this, LostFoundTable::class.java)
-            startActivity(intent)*/
         }
 
         val toDelete = findViewById<Button>(R.id.btnDelete)
@@ -174,25 +142,6 @@ class LostFoundEdit : AppCompatActivity() {
             val intent = Intent(this, LostFoundTable::class.java)
             startActivity(intent)
 
-
-            /*
-            selected.addListenerForSingleValueEvent(object: ValueEventListener{
-                override fun onDataChange(snapshot: DataSnapshot) {
-                    for (lfSnapshot in snapshot.children){
-                        //val current_id = lfSnapshot.child("id").value.toString()
-                        val selectedRow = ref.child("lostFoundTable").orderByChild("id").equalTo(edit_row)
-                        tryUpdate(selectedRow)
-                    }
-                }
-
-                override fun onCancelled(error: DatabaseError) {
-                    TODO("Not yet implemented")
-                }
-            })
-            //var lf =
-
-            val intent = Intent(this, LostFoundTable::class.java)
-            startActivity(intent)*/
         }
 
     }
@@ -205,6 +154,7 @@ class LostFoundEdit : AppCompatActivity() {
         theRef.setValue(lf)
 
         val intent = Intent(this, LostFoundTable::class.java)
+        intent.putExtra("HKS1",loginName)
         startActivity(intent)
         /*
         query.addListenerForSingleValueEvent(object:ValueEventListener{
@@ -215,13 +165,41 @@ class LostFoundEdit : AppCompatActivity() {
             }
 
             override fun onCancelled(error: DatabaseError) {
-                TODO("Not yet implemented")
             }
         })*/
     }
 
     //outside oncreate()
+    //Side menu
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        menuInflater.inflate(R.menu.menu_3, menu)
+        return true
+    }
 
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            R.id.Item1 -> {
+                val intent = Intent(this, HkStaffMenu::class.java)
+                intent.putExtra("HKS1",loginName)
+                startActivity(intent)
+                return true
+            }
+            R.id.Item2 -> {
+                val intent = Intent(this, LostFoundTable::class.java)
+                intent.putExtra("HKS1",loginName)
+                startActivity(intent)
+                return true
+            }
+
+            R.id.Item3 -> {
+                val intent = Intent(this, HkStaffTask::class.java)
+                intent.putExtra("HKS1",loginName)
+                startActivity(intent)
+                return true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
+    }
 
     //back button
     override fun onSupportNavigateUp(): Boolean {

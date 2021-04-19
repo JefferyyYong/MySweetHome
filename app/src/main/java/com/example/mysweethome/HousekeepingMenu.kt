@@ -12,13 +12,17 @@ class HousekeepingMenu : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.housekeeping_menu)
 
+        val adminName = findViewById<TextView>(R.id.adminName)
         setTitle("Housekeeping");
+        adminName.setText("Christal")
+
 
         //Admin
 
         val toTask = findViewById<ImageView>(R.id.imgViewTaskAllocation)
         val toInspect = findViewById<ImageView>(R.id.imgViewInspection)
         val toLogout = findViewById<Button>(R.id.btnLogout)
+
 
         toTask.setOnClickListener {
             val intent = Intent(this, AdminTask::class.java)

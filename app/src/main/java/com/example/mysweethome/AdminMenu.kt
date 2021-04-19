@@ -32,7 +32,9 @@ class AdminMenu : AppCompatActivity() {
         }
 
         toViewHousekeeping.setOnClickListener {
+            var x = "Christal"
             val intent = Intent(this, HousekeepingMenu::class.java)
+            intent.putExtra("AdminStaff", x)
             startActivity(intent)
         }
 

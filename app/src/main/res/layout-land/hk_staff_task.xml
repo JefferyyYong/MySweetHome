@@ -8,109 +8,99 @@
     tools:context=".AdminTask">
 
     <android.widget.Button
-        android:id="@+id/btnView"
+        android:id="@+id/btnBack"
         android:layout_width="130dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="92dp"
-        android:layout_marginTop="88dp"
+        android:layout_marginStart="276dp"
+        android:layout_marginTop="48dp"
         android:background="@drawable/rounded_corners"
         android:backgroundTint="#F2C94C"
-        android:text="View"
+        android:text="Back"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="#000000"
         android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@+id/remark"
-        app:layout_constraintTop_toBottomOf="@+id/spinnerFloor" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/remark" />
 
     <TextView
-        android:id="@+id/tvRemarks3"
+        android:id="@+id/tvFloorNo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="308dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="144dp"
         android:text="Floor:"
         android:textColor="@color/black"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.009"
-        app:layout_constraintStart_toEndOf="@+id/tvRemarks2"
+        app:layout_constraintHorizontal_bias="0.065"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/tvRemarks2"
+        android:id="@+id/tvStaffName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="40dp"
         android:text="Staff:"
         android:textColor="@color/black"
         android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.066"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Spinner
-        android:id="@+id/spinnerStaff"
+    <TextView
+        android:id="@+id/tvStaff"
         android:layout_width="250dp"
         android:layout_height="50dp"
-        android:layout_marginStart="24dp"
-        android:background="#dff2fa"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvRemarks2" />
-
-    <Spinner
-        android:id="@+id/spinnerFloor"
-        android:layout_width="250dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="104dp"
-        android:background="#dff2fa"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/table_border"
+        android:textSize="30dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/spinnerStaff"
-        app:layout_constraintTop_toBottomOf="@+id/tvRemarks3" />
+        app:layout_constraintHorizontal_bias="0.093"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvStaffName" />
+
+    <TextView
+        android:id="@+id/tvFloor"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="4dp"
+        android:background="@drawable/table_border"
+        android:textSize="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.093"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvFloorNo" />
 
     <TextView
         android:id="@+id/tvRemarks"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="40dp"
         android:text="@string/remarks"
         android:textColor="@color/black"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.036"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinnerStaff" />
+        app:layout_constraintHorizontal_bias="0.545"
+        app:layout_constraintStart_toEndOf="@+id/tvStaffName"
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
+    <TextView
         android:id="@+id/remark"
         android:layout_width="250dp"
         android:layout_height="150dp"
-        android:layout_marginStart="24dp"
+        android:layout_marginTop="8dp"
         android:autofillHints=""
-        android:background="#dff2fa"
+        android:background="@drawable/table_border"
         android:ems="10"
         android:gravity="start|top"
         android:inputType="textMultiLine"
         android:labelFor="@id/remark"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvRemarks" />
-
-    <android.widget.Button
-        android:id="@+id/btnSubmit"
-        android:layout_width="130dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="44dp"
-        android:layout_marginTop="88dp"
-        android:background="@drawable/rounded_corners"
-        android:backgroundTint="#F2C94C"
-        android:text="@string/btn_submit"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textColor="#000000"
-        android:textStyle="bold"
+        android:textSize="25dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/btnView"
-        app:layout_constraintTop_toBottomOf="@+id/spinnerFloor" />
+        app:layout_constraintHorizontal_bias="0.787"
+        app:layout_constraintStart_toEndOf="@+id/tvFloorNo"
+        app:layout_constraintTop_toBottomOf="@+id/tvRemarks" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

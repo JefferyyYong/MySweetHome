@@ -36,7 +36,7 @@ class Login : AppCompatActivity() {
             var password: String = passwordEt.text.toString()
             val sample1 = "jy97@gmail.com"
             val psample2 = "123456"
-            val adminSample ="cch97@gmail.com"
+            val adminSample ="christal@gmail.com"
             val staffSample ="john@gmail.com"
             val staffSample2 ="alice@gmail.com"
             val staffSample3 ="apple@gmail.com"
@@ -65,9 +65,11 @@ class Login : AppCompatActivity() {
 
                         } else {
                             if (email == adminSample && password == psample2) {
+                                var x = "Christal"
                                 Toast.makeText(this, "You Have Successfully Logged In", Toast.LENGTH_LONG)
                                         .show()
                                 val intent = Intent(this, AdminMenu::class.java)
+                                intent.putExtra("AdminStaff",x)
                                 startActivity(intent)
                                 finish()
                             } else {

@@ -24,8 +24,13 @@ class FrontDesk : AppCompatActivity() {
         val room      = findViewById<ImageButton>(R.id.roomBtn)
         setTitle("Front Desk Menu")
 
+        //loginName.setText(intent.getStringExtra("FrontDeskStaff").toString())
 
-        loginName.setText(intent.getStringExtra("FrontDeskStaff").toString())
+        if (loginName != null) {
+            loginName.setText(intent.getStringExtra("FrontDeskStaff").toString())
+        }
+
+        loginName.setText("Jeffery")
 
 
         checkInMenuBtn.setOnClickListener {

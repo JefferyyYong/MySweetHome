@@ -22,10 +22,14 @@ class LostFoundAdd : AppCompatActivity() {
     lateinit var tvTemp: TextView
     lateinit var lfId: String
     lateinit var currentLast: Query
+    lateinit var loginName: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.lost_found_add)
+
+        //
+        loginName = intent.getStringExtra("HKS1").toString()
 
         //back button
         val actionbar = supportActionBar
@@ -157,6 +161,7 @@ class LostFoundAdd : AppCompatActivity() {
                 Toast.LENGTH_SHORT
             ).show()
             val intent = Intent(this, LostFoundTable::class.java)
+            intent.putExtra("HKS1",loginName)
             startActivity(intent)
         }
     }
@@ -171,11 +176,20 @@ class LostFoundAdd : AppCompatActivity() {
         return when (item.itemId) {
             R.id.Item1 -> {
                 val intent = Intent(this, HkStaffMenu::class.java)
+                intent.putExtra("HKS1",loginName)
                 startActivity(intent)
                 return true
             }
             R.id.Item2 -> {
                 val intent = Intent(this, LostFoundTable::class.java)
+                intent.putExtra("HKS1",loginName)
+                startActivity(intent)
+                return true
+            }
+
+            R.id.Item3 -> {
+                val intent = Intent(this, HkStaffTask::class.java)
+                intent.putExtra("HKS1",loginName)
                 startActivity(intent)
                 return true
             }

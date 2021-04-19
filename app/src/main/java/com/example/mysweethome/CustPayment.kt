@@ -97,17 +97,17 @@ class CustPayment : AppCompatActivity() {
         val cardType = card.getText().toString()
 
         if(cardNo.isEmpty()){
-            etCardNo.error = "Please fill in your name"
+            etCardNo.error = "Please fill in your card number"
             return
         }
 
         if (cardExpiry.isEmpty()){
-            etCardExpiry.error = "Please fill in email"
+            etCardExpiry.error = "Please fill in the card expiry"
             return
         }
 
         if(cvc.isEmpty()){
-            etCVC.error = "Please fill in your contact"
+            etCVC.error = "Please fill in the cvc"
             return
         }
 

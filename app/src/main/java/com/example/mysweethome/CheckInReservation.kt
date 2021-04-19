@@ -19,6 +19,9 @@ class CheckInReservation : AppCompatActivity() {
     lateinit var rOut: TextView
     lateinit var rType: TextView
     lateinit var rId: EditText
+    lateinit var userEmail: EditText
+    lateinit var fCustEmail:String
+    lateinit var custEmail:String
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.check_in_reservation)
@@ -31,15 +34,16 @@ class CheckInReservation : AppCompatActivity() {
         rIn =  findViewById(R.id.rCheckDate)
         rOut = findViewById(R.id.rOutDate)
         rType = findViewById(R.id.rType)
+        userEmail = findViewById(R.id.emailR)
+
         //back button
         val actionbar = supportActionBar
         //back button
         actionbar!!.title = "Check In"
         actionbar.setDisplayHomeAsUpEnabled(true)
 
-
-
         sBtn.setOnClickListener {
+
             search()
             var rId : String = id.text.toString()
             var rName : String = name.text.toString()
@@ -61,7 +65,9 @@ class CheckInReservation : AppCompatActivity() {
     }
 
     private fun search() {
-        ref = FirebaseDatabase.getInstance().getReference().child("custReservationTable").child(rId.text.toString())
+        custEmail = userEmail.text.toString().replace("@","")
+        fCustEmail = custEmail.replace(".","")
+        ref = FirebaseDatabase.getInstance().getReference("custReservationTable").child(fCustEmail).child(rId.text.toString())
         ref.addValueEventListener(object : ValueEventListener {
             //proRef.addValueEventListener(object : ValueEventListener{
             override fun onDataChange(dataS: DataSnapshot) {

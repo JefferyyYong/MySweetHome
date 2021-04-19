@@ -11,12 +11,11 @@
         android:id="@+id/tvWelcome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="236dp"
         android:layout_marginTop="36dp"
         android:text="Welcome,"
         android:textColor="@color/black"
         android:textSize="30sp"
-        app:layout_constraintEnd_toStartOf="@+id/adminName"
-        app:layout_constraintHorizontal_bias="0.926"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -24,39 +23,34 @@
         android:id="@+id/adminName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="36dp"
-        android:layout_marginEnd="208dp"
         android:width="150sp"
         android:textColor="@color/black"
         android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/imgViewHousekeeping"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintStart_toEndOf="@+id/tvWelcome"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/imgViewFrontDesk"
         android:layout_width="157dp"
         android:layout_height="141dp"
-        android:layout_marginStart="156dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginStart="180dp"
+        android:layout_marginTop="24dp"
         android:contentDescription="@string/desc_button_front_desk"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvWelcome"
-        app:layout_constraintVertical_bias="0.012"
         app:srcCompat="@drawable/btn_front_desk" />
 
     <ImageView
         android:id="@+id/imgViewHousekeeping"
         android:layout_width="157dp"
         android:layout_height="141dp"
-        android:layout_marginBottom="152dp"
+        android:layout_marginStart="68dp"
+        android:layout_marginTop="24dp"
         android:contentDescription="@string/desc_button_front_desk"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.688"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imgViewFrontDesk"
+        app:layout_constraintTop_toBottomOf="@+id/adminName"
         app:srcCompat="@drawable/btn_housekeeping" />
 
     <android.widget.Button
@@ -73,7 +67,7 @@
         android:textStyle="bold"
         app:backgroundTint="#F2C94C"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.415"
+        app:layout_constraintHorizontal_bias="0.567"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imgViewFrontDesk"
         app:strokeColor="#F2C94C" />

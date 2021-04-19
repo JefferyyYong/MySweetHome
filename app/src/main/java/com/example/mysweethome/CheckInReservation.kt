@@ -94,7 +94,9 @@ class CheckInReservation : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
             R.id.Item1 -> {
+                var x = "Jeffery"
                 val intent = Intent(this, FrontDesk::class.java)
+                intent.putExtra("FrontDeskStaff",x)
                 startActivity(intent)
                 return true
             }

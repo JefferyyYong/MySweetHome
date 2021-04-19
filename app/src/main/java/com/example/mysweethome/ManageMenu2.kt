@@ -45,9 +45,9 @@ class ManageMenu2 : AppCompatActivity() {
         date.setOnClickListener {
             val dpd = DatePickerDialog(
                     this,
-                    DatePickerDialog.OnDateSetListener { view, year, monthOfYear, dayOfMonth ->
+                    DatePickerDialog.OnDateSetListener { view, year, month, dayOfMonth ->
                         // Display Selected date in TextView
-                        newCheckOut.setText("" + month + "/" + dayOfMonth + "/" + year)
+                        newCheckOut.setText("" + (month+1) + "/" + dayOfMonth + "/" + year)
                     },
                     year,
                     month,
@@ -105,11 +105,10 @@ class ManageMenu2 : AppCompatActivity() {
             }
         }
         update.setOnClickListener {
+            var x = "Jeffery"
             val checkOutDateNew = newCheckOut.text.toString().trim()
             updateData(checkOutDateNew)
-            //ref = FirebaseDatabase.getInstance().getReference().child("reservation_table").child(intent.getStringExtra("customerIc").toString())
-            //ref.child("checkOutDate").(newCheckOut.text.toString().trim())
-
+            intent.putExtra("FrontDeskStaff",x)
             val intent = Intent(this, FrontDesk::class.java)
             startActivity(intent)
         }

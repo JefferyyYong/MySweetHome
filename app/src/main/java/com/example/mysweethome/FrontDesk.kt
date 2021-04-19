@@ -24,7 +24,9 @@ class FrontDesk : AppCompatActivity() {
         val room      = findViewById<ImageButton>(R.id.roomBtn)
         setTitle("Front Desk Menu")
 
-        loginName.text = "Jeffery"
+
+        loginName.setText(intent.getStringExtra("FrontDeskStaff").toString())
+
 
         checkInMenuBtn.setOnClickListener {
             val intent = Intent(this, CheckInMenu::class.java)
@@ -58,7 +60,9 @@ class FrontDesk : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
             R.id.Item1 -> {
+                var x = "Jeffery"
                 val intent = Intent(this, FrontDesk::class.java)
+                intent.putExtra("FrontDeskStaff",x)
                 startActivity(intent)
                 return true
             }

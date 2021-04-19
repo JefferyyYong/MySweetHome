@@ -17,12 +17,21 @@
         ></TextView>
 
 
+    <Button
+        android:id="@+id/searchHis"
+        android:layout_width="100sp"
+        android:layout_height="40sp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="100dp"
+        android:layout_marginEnd="122dp"
+        android:text="Search" />
+
     <ListView
         android:id="@+id/ListView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="36dp"
+        android:layout_height="747dp"
+        android:layout_below="@id/searchHis"
+        android:layout_marginTop="64dp"
         android:divider="@android:color/transparent">
 
     </ListView>

@@ -34,7 +34,8 @@ class CustReservation : AppCompatActivity() {
     lateinit var date1:EditText
     lateinit var date2:EditText
     lateinit var totalPrice:Button
-
+    lateinit var custEmail:String
+    lateinit var fCustEmail:String
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.cust_reservation)
@@ -218,21 +219,12 @@ class CustReservation : AppCompatActivity() {
                 }
             }
         }
-
-
-        val ref = FirebaseDatabase.getInstance().getReference("custReservationTable")
+        val email = etEmail.text.toString().trim()
+        custEmail = email.replace("@","")
+        fCustEmail = custEmail.replace(".","")
+        val ref = FirebaseDatabase.getInstance().getReference("custReservationTable").child(fCustEmail)
         var reservationId = 0
 
-
-        ref.addValueEventListener(object : ValueEventListener {
-            override fun onDataChange(snapshot: DataSnapshot) {
-                reservationId = snapshot.childrenCount.toInt() + 1
-                txtReservationNo.setText("reservationNo"+reservationId.toString())
-            }
-
-            override fun onCancelled(error: DatabaseError) {
-            }
-        });
 
         homeBtn.setOnClickListener {
             val intent = Intent(this, CustMenu
@@ -312,11 +304,12 @@ class CustReservation : AppCompatActivity() {
        }
 
 
-       val ref = FirebaseDatabase.getInstance().getReference("custReservationTable")
+       val ref = FirebaseDatabase.getInstance().getReference("custReservationTable").child(fCustEmail)
        //Auto Generate
-       //val custReservationId = ref.push().key
+       val custReservationId = ref.push().key
 
-       custReservationId = txtReservationNo.text.toString().trim()
+
+       //custReservationId = txtReservationNo.text.toString().trim()
 
        val custReservation = DBCustReservation(
            custReservationId.toString(),
@@ -331,8 +324,8 @@ class CustReservation : AppCompatActivity() {
            checkOutTime,
            totalAmount
        )
-
        ref.child(custReservationId.toString()).setValue(custReservation).addOnCompleteListener{
+
             Toast.makeText(applicationContext, "Reservation details has been recorded successfully", Toast.LENGTH_LONG).show()
         }
 

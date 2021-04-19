@@ -25,7 +25,9 @@ class AdminMenu : AppCompatActivity() {
         val toLogout = findViewById<Button>(R.id.btnLogout)
 
         toFrontDesk.setOnClickListener {
+            var x = "Christal"
             val intent = Intent(this, FrontDesk::class.java)
+            intent.putExtra("FrontDeskStaff",x)
             startActivity(intent)
         }
 
@@ -51,7 +53,9 @@ class AdminMenu : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
             R.id.Item1 -> {
+                var x = "Christal"
                 val intent = Intent(this, FrontDesk::class.java)
+                intent.putExtra("FrontDeskStaff",x)
                 startActivity(intent)
                 return true
             }

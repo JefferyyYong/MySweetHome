@@ -1,4 +1,4 @@
-package com.example.mysweethome.database
+/*package com.example.mysweethome.database
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity
@@ -16,4 +16,4 @@ data class reservation(
     @ColumnInfo(name = "customer_ic")
     var customerIc: String,
 
-)
+)*/

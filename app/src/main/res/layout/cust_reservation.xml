@@ -270,12 +270,14 @@
         android:id="@+id/btnCalculate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="@color/white"
         android:layout_marginStart="4dp"
         android:layout_marginTop="16dp"
         android:text="Calculate"
         app:backgroundTint="#002ED4"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/total" />
+        app:layout_constraintTop_toBottomOf="@+id/total"
+        />
 
     <ImageView
         android:id="@+id/ivCheck"
@@ -293,6 +295,7 @@
         android:layout_height="67dp"
         android:layout_marginTop="74dp"
         android:text="Proceed to Payment"
+        android:textColor="@color/white"
         app:backgroundTint="#3CB043"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/total" />
@@ -315,6 +318,7 @@
         android:layout_marginTop="132dp"
         android:text="Cancel"
         android:textSize="18dp"
+        android:textColor="@color/white"
         app:backgroundTint="#B90E0A"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etTime2" />

@@ -270,6 +270,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="484dp"
         android:layout_marginTop="4dp"
+        android:textColor="@color/white"
         android:text="Calculate"
         app:backgroundTint="#002ED4"
         app:layout_constraintStart_toStartOf="parent"
@@ -282,6 +283,7 @@
         android:layout_marginTop="76dp"
         android:layout_marginEnd="48dp"
         android:text="Proceed to Payment"
+        android:textColor="@color/white"
         app:backgroundTint="#3CB043"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/total" />
@@ -294,9 +296,11 @@
         android:layout_marginEnd="44dp"
         android:text="Cancel"
         android:textSize="18dp"
+        android:textColor="@color/white"
         app:backgroundTint="#B90E0A"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/proceedBtn" />
+        app:layout_constraintTop_toBottomOf="@+id/proceedBtn"
+        />
 
     <TextView
         android:id="@+id/txtReservationNo"

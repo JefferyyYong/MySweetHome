@@ -53,13 +53,11 @@ class LostFoundAdd : AppCompatActivity() {
 
             val dpd = DatePickerDialog(
                 this,
-                DatePickerDialog.OnDateSetListener { view, year, monthOfYear, dayOfMonth ->
+                DatePickerDialog.OnDateSetListener { view, year, month, day ->
                     // Display Selected date in TextView
-                    etDate.setText("" + dayOfMonth + "/" + month + "/" + year)
+                    etDate.setText("" + day + "/" + (month+1) + "/" + year)
                 },
-                year,
-                month,
-                day
+                year, month, day
             )
             dpd.show()
         }

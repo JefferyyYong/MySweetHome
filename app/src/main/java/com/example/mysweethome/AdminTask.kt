@@ -34,6 +34,7 @@ class AdminTask : AppCompatActivity() {
             val arrayAdapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, staffName)
             sStaff.adapter = arrayAdapter
 
+            /*
             sStaff.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
                 override fun onItemSelected(parent: AdapterView<*>, view: View, position: Int, id: Long) {
                     //Toast.makeText(this@AdminTask, staffName[position], Toast.LENGTH_SHORT).show()
@@ -42,7 +43,7 @@ class AdminTask : AppCompatActivity() {
                 override fun onNothingSelected(parent: AdapterView<*>) {
                     // Code to perform some action when nothing is selected
                 }
-            }
+            }*/
         }
 
         //Confirm floor level (total)
@@ -53,6 +54,7 @@ class AdminTask : AppCompatActivity() {
             val arrayAdapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, floorLvl)
             sFloor.adapter = arrayAdapter
 
+            /*
             sFloor.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
                 override fun onItemSelected(parent: AdapterView<*>, view: View, position: Int, id: Long) {
                     //Toast.makeText(this@AdminTask, floorLvl[position], Toast.LENGTH_SHORT).show()
@@ -61,7 +63,7 @@ class AdminTask : AppCompatActivity() {
                 override fun onNothingSelected(parent: AdapterView<*>) {
                     // Code to perform some action when nothing is selected
                 }
-            }
+            }*/
         }
 
         val toSubmit = findViewById<Button>(R.id.btnSubmit)

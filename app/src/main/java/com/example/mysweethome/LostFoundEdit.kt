@@ -80,9 +80,9 @@ class LostFoundEdit : AppCompatActivity() {
         val day = c.get(Calendar.DAY_OF_MONTH)
 
         lfDate.setOnClickListener {
-            val dpd = DatePickerDialog(this, DatePickerDialog.OnDateSetListener { view, year, monthOfYear, dayOfMonth ->
+            val dpd = DatePickerDialog(this, DatePickerDialog.OnDateSetListener { view, year, month, day ->
                 // Display Selected date in TextView
-                lfDate.setText("" + dayOfMonth + "/" + month + "/" + year)
+                lfDate.setText("" + day + "/" + (month+1) + "/" + year)
             }, year, month, day)
             dpd.show()
         }

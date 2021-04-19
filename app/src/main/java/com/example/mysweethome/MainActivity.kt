@@ -17,7 +17,7 @@ class MainActivity : AppCompatActivity() {
 
         loginBtn.setOnClickListener{
             //val intent = Intent(this, Login::class.java)
-            intent = Intent(this, InspectRoomList::class.java)
+            intent = Intent(this, InspectMenu::class.java)
             //val intent = Intent(this, FrontDesk::class.java)
             startActivity(intent)
         }

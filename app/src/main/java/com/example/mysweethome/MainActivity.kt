@@ -4,6 +4,7 @@ package com.example.mysweethome
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.content.Intent
+import android.widget.Button
 import com.google.android.material.chip.Chip
 
 class MainActivity : AppCompatActivity() {
@@ -11,22 +12,17 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val loginChip = findViewById<Chip>(R.id.Login)
-        val signUpChip = findViewById<Chip>(R.id.Signup)
+        val loginBtn = findViewById<Button>(R.id.Login)
+        val signUpBtn = findViewById<Button>(R.id.Signup)
 
-
-        loginChip.setOnClickListener{
-            val intent = Intent(this, Login::class.java)
-            //val intent = Intent(this, CheckInRoomStatus::class.java)
+        loginBtn.setOnClickListener{
+            //val intent = Intent(this, Login::class.java)
+            intent = Intent(this, InspectRoomList::class.java)
+            //val intent = Intent(this, FrontDesk::class.java)
             startActivity(intent)
         }
 
-        //loginChip.setOnClickListener{
-        //    val intent = Intent(this, AdminMenu::class.java)
-        //    startActivity(intent)
-        //}
-
-        signUpChip.setOnClickListener{
+        signUpBtn.setOnClickListener{
             val intent = Intent(this, signUp::class.java)
             startActivity(intent)
         }

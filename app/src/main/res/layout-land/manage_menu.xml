@@ -130,7 +130,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="356dp"
         android:textColor="@color/black"
-        android:textSize="25sp"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="@+id/imageView9"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/textView31"

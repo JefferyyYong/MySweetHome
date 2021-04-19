@@ -121,7 +121,7 @@ class ManageMenu2 : AppCompatActivity() {
     val data = mapOf<String,String>(
             "checkOutDate" to checkOutDateNew
     )
-        ref.child("121212").updateChildren(data).addOnSuccessListener {
+        ref.child(intent.getStringExtra("CustomerIC").toString()).updateChildren(data).addOnSuccessListener {
             Toast.makeText(this,"Successfully Updated",Toast.LENGTH_SHORT).show()
         }.addOnFailureListener {
             Toast.makeText(this,"Failed to Updated",Toast.LENGTH_SHORT).show()

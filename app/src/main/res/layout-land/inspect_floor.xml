@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".InspectFloor">
+
+
+    <EditText
+        android:id="@+id/etRemarks"
+        android:layout_width="250dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="52dp"
+        android:autofillHints=""
+        android:background="#dff2fa"
+        android:ems="10"
+        android:gravity="start|top"
+        android:inputType="textMultiLine"
+        android:labelFor="@id/etRemarks"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.606"
+        app:layout_constraintStart_toEndOf="@+id/spinnerItem"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerStatus" />
+
+    <Spinner
+        android:id="@+id/spinnerItem"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginBottom="132dp"
+        android:background="#dff2fa"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tvFloor"
+        android:layout_width="41dp"
+        android:layout_height="22dp"
+        android:layout_marginStart="52dp"
+        android:text="@string/floor"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/spinnerFloor"
+        app:layout_constraintEnd_toStartOf="@+id/tvStatus"
+        app:layout_constraintHorizontal_bias="0.002"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Spinner
+        android:id="@+id/spinnerStatus"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="56dp"
+        android:background="#dff2fa"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Spinner
+        android:id="@+id/spinnerFloor"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="52dp"
+        android:background="#dff2fa"
+        app:layout_constraintBottom_toTopOf="@+id/spinnerItem"
+        app:layout_constraintEnd_toStartOf="@+id/spinnerStatus"
+        app:layout_constraintHorizontal_bias="0.368"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tvRemarks"
+        android:layout_width="76dp"
+        android:layout_height="19dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="224dp"
+        android:text="@string/remarks"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerStatus" />
+
+    <android.widget.Button
+        android:id="@+id/btnSubmit"
+        android:layout_width="130dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        android:background="@drawable/rounded_corners"
+        android:backgroundTint="#F2C94C"
+        android:text="@string/btn_submit"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.499"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tvStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="244dp"
+        android:text="@string/status"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/spinnerStatus"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/tvItemInspect"
+        android:layout_width="41dp"
+        android:layout_height="22dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="28dp"
+        android:text="@string/item"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toStartOf="@+id/tvRemarks"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerFloor" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

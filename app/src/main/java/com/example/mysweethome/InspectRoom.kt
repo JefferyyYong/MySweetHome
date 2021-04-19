@@ -40,8 +40,7 @@ class InspectRoom : AppCompatActivity() {
         etRemarks = findViewById<EditText>(R.id.etRemarks)
         //tvTemp = findViewById<TextView>(R.id.tvTemp)
 
-        //The room no. need to get from database?
-        val roomNo = arrayOf("101","102","103","201","202", "203", "301","302","303","401","402", "403")
+        val roomNo = arrayOf("201","202", "301","302", "401","402", "501", "502")
         val sRoom = findViewById<Spinner>(R.id.spinnerRoomNo)
         if (sRoom != null) {
             val arrayAdapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, roomNo)
@@ -76,6 +75,13 @@ class InspectRoom : AppCompatActivity() {
                     // Code to perform some action when nothing is selected
                 }
             }*/
+        }
+
+        var btnList = findViewById<Button>(R.id.btnList)
+
+        btnList.setOnClickListener {
+            val intent = Intent(this, InspectRoomList::class.java)
+            startActivity(intent)
         }
 
         val toSubmit = findViewById<Button>(R.id.btnSubmit)

@@ -9,15 +9,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MySweetHome">
-
-        <activity android:name=".InspectionFloorAdapter"></activity>
+        <activity android:name=".HkStaffTask"></activity>
+        <activity android:name=".InspectionFloorAdapter" />
         <activity android:name=".InspectFloorList" />
         <activity android:name=".InspectionRoomAdapter" />
         <activity android:name=".InspectRoomList" />
-
-        <activity android:name=".Reservation_History_Details2"></activity>
+        <activity android:name=".Reservation_History_Details2" />
         <activity android:name=".Reservation_History_Details" />
-
         <activity android:name=".CheckInReservation2" />
         <activity android:name=".CheckInReservation" />
         <activity android:name=".database.CheckInReservation" />
@@ -34,7 +32,7 @@
         <activity android:name=".InspectMenu" />
         <activity android:name=".AdminTask" />
         <activity android:name=".HousekeepingMenu" />
-        <activity android:name=".AdminMenu" />
+        <activity android:name=".AdminTaskList" />
         <activity android:name=".ManageMenu2" />
         <activity android:name=".CheckOutMenu2" />
         <activity android:name=".CheckInRoomStatus" />

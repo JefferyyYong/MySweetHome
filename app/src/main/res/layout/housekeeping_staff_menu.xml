@@ -11,7 +11,7 @@
         android:id="@+id/imgViewLostFound"
         android:layout_width="172dp"
         android:layout_height="177dp"
-        android:layout_marginBottom="128dp"
+        android:layout_marginBottom="52dp"
         android:contentDescription="@string/btn_lost_found"
         app:layout_constraintBottom_toTopOf="@+id/btnLogout"
         app:layout_constraintEnd_toEndOf="parent"
@@ -59,8 +59,19 @@
         android:textSize="30sp"
         app:layout_constraintBottom_toTopOf="@+id/imgViewLostFound"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.2"
         app:layout_constraintStart_toEndOf="@+id/tvWelcome" />
+
+    <ImageView
+        android:id="@+id/ivTodo"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        app:layout_constraintBottom_toTopOf="@+id/tvWelcome"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/staff_todo"
+        android:contentDescription="TODO" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

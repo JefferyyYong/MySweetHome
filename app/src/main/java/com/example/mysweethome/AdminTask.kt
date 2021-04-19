@@ -25,55 +25,30 @@ class AdminTask : AppCompatActivity() {
         actionbar.setDisplayHomeAsUpEnabled(true)
 
 
-
-        //The staff name need to get from database
-        //val staffName = arrayOf("Staff","John","Alice","Apple")
-        val staffName = arrayOf("John","Alice","Apple")
+        val staffName = arrayOf("Alice","Apple","John")
         sStaff = findViewById(R.id.spinnerStaff)
         if (sStaff != null) {
             val arrayAdapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, staffName)
             sStaff.adapter = arrayAdapter
 
-            /*
-            sStaff.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-                override fun onItemSelected(parent: AdapterView<*>, view: View, position: Int, id: Long) {
-                    //Toast.makeText(this@AdminTask, staffName[position], Toast.LENGTH_SHORT).show()
-                }
-
-                override fun onNothingSelected(parent: AdapterView<*>) {
-                    // Code to perform some action when nothing is selected
-                }
-            }*/
         }
 
         //Confirm floor level (total)
-        //val floorLvl = arrayOf("Floor", "Floor 1","Floor 2","Floor 3")
-        val floorLvl = arrayOf("Floor 2","Floor 3","Floor 4","Floor 5")
+        val floorLvl = arrayOf("Floor 1", "Floor 2","Floor 3","Floor 4","Floor 5")
         sFloor = findViewById(R.id.spinnerFloor)
         if (sFloor != null) {
             val arrayAdapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, floorLvl)
             sFloor.adapter = arrayAdapter
-
-            /*
-            sFloor.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-                override fun onItemSelected(parent: AdapterView<*>, view: View, position: Int, id: Long) {
-                    //Toast.makeText(this@AdminTask, floorLvl[position], Toast.LENGTH_SHORT).show()
-                }
-
-                override fun onNothingSelected(parent: AdapterView<*>) {
-                    // Code to perform some action when nothing is selected
-                }
-            }*/
         }
 
         val toSubmit = findViewById<Button>(R.id.btnSubmit)
-        val nxt = findViewById<Button>(R.id.btnSubmit2)
+        val toView = findViewById<Button>(R.id.btnView)
 
         toSubmit.setOnClickListener {
             saveTask()
         }
 
-        nxt.setOnClickListener {
+        toView.setOnClickListener {
             val intent = Intent(this, AdminTaskList::class.java)
             startActivity(intent)
         }
@@ -84,7 +59,7 @@ class AdminTask : AppCompatActivity() {
         val floor = sFloor.selectedItem.toString()
         val remark = remark.text.toString().trim()
 
-        val ref = FirebaseDatabase.getInstance().getReference("task_table")
+        val ref = FirebaseDatabase.getInstance().getReference("taskTable")
         val lfId = staff
         val lf = DBTask(staff,floor,remark)
         ref.child(lfId.toString()).setValue(lf).addOnCompleteListener{

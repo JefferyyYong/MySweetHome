@@ -18,8 +18,6 @@ class MainActivity : AppCompatActivity() {
         loginBtn.setOnClickListener{
 
             val intent = Intent(this, Login::class.java)
-   
-         
             startActivity(intent)
         }
 

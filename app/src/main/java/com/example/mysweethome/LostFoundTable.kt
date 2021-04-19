@@ -3,6 +3,8 @@ package com.example.mysweethome
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import android.view.View
 import android.widget.*
 import com.google.firebase.database.*
@@ -12,10 +14,15 @@ class LostFoundTable : AppCompatActivity() {
     lateinit var listView: ListView
     lateinit var lostFoundList: MutableList<LostFound>
     lateinit var ref: DatabaseReference
+    lateinit var loginName: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.lost_found_table)
+
+        //
+        loginName = intent.getStringExtra("HKS1").toString()
+        intent.putExtra("HKS1",loginName)
 
         //back button
         val actionbar = supportActionBar
@@ -33,6 +40,7 @@ class LostFoundTable : AppCompatActivity() {
 
         addBtn.setOnClickListener {
             val intent = Intent(this, LostFoundAdd::class.java)
+            intent.putExtra("HKS1",loginName)
             startActivity(intent)
         }
 
@@ -78,6 +86,7 @@ class LostFoundTable : AppCompatActivity() {
 
             editBtn.setOnClickListener {
                 val intent = Intent(this, LostFoundEdit::class.java)
+                intent.putExtra("HKS1",loginName)
                 intent.putExtra("selected_id", num)
                 //intent.putExtra("selected_row", row) //Start from row 0
                 intent.putExtra("selected_date", date)
@@ -94,6 +103,37 @@ class LostFoundTable : AppCompatActivity() {
     }
 
     //outside onCreate()
+    //Side menu
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        menuInflater.inflate(R.menu.menu_3, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            R.id.Item1 -> {
+                val intent = Intent(this, HkStaffMenu::class.java)
+                intent.putExtra("HKS1",loginName)
+                startActivity(intent)
+                return true
+            }
+            R.id.Item2 -> {
+                val intent = Intent(this, LostFoundTable::class.java)
+                intent.putExtra("HKS1",loginName)
+                startActivity(intent)
+                return true
+            }
+
+            R.id.Item3 -> {
+                val intent = Intent(this, HkStaffTask::class.java)
+                intent.putExtra("HKS1",loginName)
+                startActivity(intent)
+                return true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
+    }
+
     //back button
     override fun onSupportNavigateUp(): Boolean {
         onBackPressed()

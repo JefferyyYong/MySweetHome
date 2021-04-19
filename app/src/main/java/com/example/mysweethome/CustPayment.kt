@@ -130,7 +130,6 @@ class CustPayment : AppCompatActivity() {
 
         val intent = Intent(this, ConfirmationPage::class.java)
         startActivity(intent)
-
     }
 
 

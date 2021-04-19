@@ -128,7 +128,8 @@
         android:text="Cancel"
         app:backgroundTint="#B90E0A"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnPay" />
+        app:layout_constraintTop_toBottomOf="@+id/btnPay"
+        />
 
     <ImageView
         android:id="@+id/card_icon"

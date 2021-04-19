@@ -16,16 +16,11 @@ class MainActivity : AppCompatActivity() {
         val signUpBtn = findViewById<Button>(R.id.Signup)
 
         loginBtn.setOnClickListener{
-            val intent = Intent(this, Login::class.java)
-            // intent = Intent(this, InspectRoomList::class.java)
+            //val intent = Intent(this, Login::class.java)
+            intent = Intent(this, InspectRoomList::class.java)
             //val intent = Intent(this, FrontDesk::class.java)
             startActivity(intent)
         }
-
-        //loginChip.setOnClickListener{
-        //    val intent = Intent(this, AdminMenu::class.java)
-        //    startActivity(intent)
-        //}
 
         signUpBtn.setOnClickListener{
             val intent = Intent(this, signUp::class.java)

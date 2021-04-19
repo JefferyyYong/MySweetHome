@@ -9,8 +9,8 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="345dp"
-        android:layout_height="91dp">
-
+        android:layout_height="91dp"
+        >
 
         <androidx.appcompat.widget.AppCompatTextView
 
@@ -18,8 +18,7 @@
             style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
             android:layout_width="267dp"
             android:layout_height="57dp"
-            android:layout_gravity="center"
-            android:layout_marginStart="92dp"
+            android:layout_marginStart="60dp"
             android:layout_marginTop="16dp"
             android:text=""
             android:textColor="@color/black"
@@ -32,7 +31,7 @@
             style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="288dp"
+            android:layout_marginStart="256dp"
             android:layout_marginTop="16dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"

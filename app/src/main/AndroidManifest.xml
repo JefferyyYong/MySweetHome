@@ -9,9 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MySweetHome">
-        <activity android:name=".CheckInReservation2"></activity>
-        <activity android:name=".CheckInReservation" />
-        <activity android:name=".database.CheckInReservation" />
+        <activity android:name=".SearchHistory"></activity>
         <activity android:name=".ReservationHistoryDetails" />
         <activity android:name=".CustPayment" />
         <activity android:name=".CustMenu" />
@@ -40,6 +38,7 @@
         <activity android:name=".Login" />
         <activity android:name=".CustReservation" />
         <activity android:name=".ReservationHistory" />
+        <activity android:name=".ConfirmationPage" />
         <activity android:name=".signUp" />
         <activity android:name=".MainActivity">
             <intent-filter>

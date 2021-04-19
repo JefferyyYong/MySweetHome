@@ -53,5 +53,7 @@
     <string name="room_status">Room Status</string>
     <string name="homepage">Homepage</string>
 
+    <string name="reservation_details"><u>Reservation Details</u></string>
+
 
 </resources>

@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.widget.*
 import androidx.appcompat.app.ActionBar
 import androidx.appcompat.app.AppCompatActivity
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 
 
@@ -17,7 +18,8 @@ class CustPayment : AppCompatActivity() {
     lateinit var etCVC: EditText
     lateinit var txtReceiptNo: TextView
     lateinit var paymentId: String
-
+    lateinit var custEmail:String
+    lateinit var fCustEmail:String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -134,29 +136,39 @@ class CustPayment : AppCompatActivity() {
 
 
     private fun cancelReservation(){
-        val ref = FirebaseDatabase.getInstance().getReference()
-        val lastQuery: Query = ref.child("custReservationTable").orderByKey().limitToLast(1)
 
 
-        lastQuery.addListenerForSingleValueEvent(object : ValueEventListener {
-            override fun onDataChange(dataSnapshot: DataSnapshot)
-            {   for (reserveSnapshot in dataSnapshot.children) {
-                val id = reserveSnapshot.child("id").value.toString()
-                //Toast.makeText(this@CustPayment, id, Toast.LENGTH_LONG).show()
-                val deleteQuery = ref.child("custReservationTable").orderByChild("id").equalTo(id)
-                removeData(deleteQuery)
-                break
+        val user = FirebaseAuth.getInstance().currentUser
+        if (user != null) {
+            val userEmail = user.email
+            custEmail = userEmail.replace("@","")
+            fCustEmail = custEmail.replace(".","")
+            val ref = FirebaseDatabase.getInstance().getReference()
+            val lastQuery: Query = ref.child("custReservationTable").child(fCustEmail).orderByKey().limitToLast(1)
+
+            lastQuery.addListenerForSingleValueEvent(object : ValueEventListener {
+                override fun onDataChange(dataSnapshot: DataSnapshot)
+                {   for (reserveSnapshot in dataSnapshot.children) {
+                    val id = reserveSnapshot.child("id").value.toString()
+                    //Toast.makeText(this@CustPayment, id, Toast.LENGTH_LONG).show()
+                    val deleteQuery = ref.child("custReservationTable").child(fCustEmail).orderByChild("id").equalTo(id)
+                    removeData(deleteQuery)
+                    break
                 }
-            }
+                }
 
-            override fun onCancelled(databaseError: DatabaseError) {
-                // Handle possible errors.
-            }
-        })
+                override fun onCancelled(databaseError: DatabaseError) {
+                    // Handle possible errors.
+                }
+            })
 
-        Toast.makeText(applicationContext, "Cancel Reserve", Toast.LENGTH_LONG).show()
-        val intent = Intent(this, CustMenu::class.java)
-        startActivity(intent)
+            Toast.makeText(applicationContext, "Cancel Reserve", Toast.LENGTH_LONG).show()
+            val intent = Intent(this, CustMenu::class.java)
+            startActivity(intent)
+        } else {
+            // No user is signed in
+        }
+
     }
 
     private fun removeData(query: Query){

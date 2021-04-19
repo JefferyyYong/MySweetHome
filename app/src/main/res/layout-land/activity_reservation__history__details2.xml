@@ -8,10 +8,10 @@
 
     <View
         android:id="@+id/myRectangleView"
-        android:layout_width="385dp"
-        android:layout_height="427dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="88dp"
+        android:layout_width="591dp"
+        android:layout_height="269dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="40dp"
         android:background="@drawable/rectangle_view"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"></View>
@@ -20,7 +20,8 @@
         android:id="@+id/cod2"
         android:layout_width="150dp"
         android:layout_height="29sp"
-        android:layout_marginTop="12dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="8dp"
         android:textColor="#2196F3"
         android:textSize="18sp"
         app:layout_constraintStart_toEndOf="@+id/lbCODate"
@@ -30,7 +31,8 @@
         android:id="@+id/cid2"
         android:layout_width="150dp"
         android:layout_height="29sp"
-        android:layout_marginTop="12dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="8dp"
         android:textColor="#2196F3"
         android:textSize="18sp"
         app:layout_constraintStart_toEndOf="@+id/lbCIDate"
@@ -40,7 +42,8 @@
         android:id="@+id/amount"
         android:layout_width="150dp"
         android:layout_height="29sp"
-        android:layout_marginTop="12dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="8dp"
         android:textColor="#2196F3"
         android:textSize="18sp"
         app:layout_constraintStart_toEndOf="@+id/lbAmountPaid"
@@ -50,18 +53,20 @@
         android:id="@+id/pax4"
         android:layout_width="40sp"
         android:layout_height="29sp"
-        android:layout_marginTop="218dp"
-        android:layout_marginEnd="32dp"
-        android:textAlignment="center"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
         android:textColor="#2196F3"
         android:textSize="15sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/myRectangleView" />
+        app:layout_constraintEnd_toEndOf="@+id/myRectangleView"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/lbCIDate5"
+        app:layout_constraintTop_toBottomOf="@+id/phoneNo" />
 
     <TextView
         android:id="@+id/phoneNo"
         android:layout_width="150dp"
         android:layout_height="29sp"
+        android:layout_marginStart="2dp"
         android:layout_marginTop="12dp"
         android:textColor="#2196F3"
         android:textSize="18sp"
@@ -70,9 +75,9 @@
 
     <TextView
         android:id="@+id/type3"
-        android:layout_width="138dp"
-        android:layout_height="28dp"
-        android:layout_marginTop="12dp"
+        android:layout_width="140dp"
+        android:layout_height="33dp"
+        android:layout_marginTop="16dp"
         android:textColor="#2196F3"
         android:textSize="15sp"
         app:layout_constraintStart_toEndOf="@+id/lbCIDate4"
@@ -82,56 +87,56 @@
         android:id="@+id/lbCIDate5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginStart="33dp"
+        android:layout_marginTop="126dp"
         android:text="Pax:"
         android:textColor="@color/black"
         android:textSize="20dp"
         app:layout_constraintStart_toEndOf="@+id/type3"
-        app:layout_constraintTop_toBottomOf="@+id/phoneNo" />
+        app:layout_constraintTop_toTopOf="@+id/tvMsg" />
 
     <TextView
         android:id="@+id/lbCIDate4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginStart="9dp"
+        android:layout_marginTop="16dp"
         android:text="Room Type:"
         android:textColor="@color/black"
         android:textSize="20dp"
-        app:layout_constraintStart_toStartOf="@+id/myRectangleView"
+        app:layout_constraintStart_toEndOf="@+id/imageView12"
         app:layout_constraintTop_toBottomOf="@+id/lbCIDate3" />
 
     <TextView
         android:id="@+id/lbCIDate3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="48dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginStart="22dp"
+        android:layout_marginTop="12dp"
         android:text="Phone No:"
         android:textColor="@color/black"
         android:textSize="20dp"
-        app:layout_constraintStart_toStartOf="@+id/myRectangleView"
+        app:layout_constraintStart_toEndOf="@+id/imageView12"
         app:layout_constraintTop_toBottomOf="@+id/lbCIDate2" />
 
     <TextView
         android:id="@+id/lbCIDate2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="80dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginStart="203dp"
+        android:layout_marginTop="9dp"
         android:text="Name:"
         android:textColor="@color/black"
         android:textSize="20dp"
         app:layout_constraintStart_toStartOf="@+id/myRectangleView"
-        app:layout_constraintTop_toBottomOf="@+id/imageView12" />
+        app:layout_constraintTop_toBottomOf="@+id/tvMsg" />
 
     <ImageView
         android:id="@+id/imageView12"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="136dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginStart="76dp"
+        android:layout_marginTop="20dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/myRectangleView"
         app:srcCompat="@drawable/bed_icon" />
@@ -140,12 +145,13 @@
         android:id="@+id/tvMsg"
         android:layout_width="300dp"
         android:layout_height="37dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="4dp"
         android:text="Reservation Details"
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="28dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.459"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -153,20 +159,20 @@
         android:id="@+id/lbCODate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginStart="120dp"
+        android:layout_marginTop="9dp"
         android:text="Check-out Date:"
         android:textColor="@color/black"
         android:textSize="20dp"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/myRectangleView"
         app:layout_constraintTop_toBottomOf="@+id/lbCIDate" />
 
     <TextView
         android:id="@+id/lbCIDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginStart="136dp"
+        android:layout_marginTop="16dp"
         android:text="Check-in Date:"
         android:textColor="@color/black"
         android:textSize="20dp"
@@ -177,8 +183,8 @@
         android:id="@+id/lbAmountPaid"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginStart="144dp"
+        android:layout_marginTop="8dp"
         android:text="Amount Paid:"
         android:textColor="@color/black"
         android:textSize="20dp"
@@ -189,21 +195,21 @@
         android:id="@+id/doneBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="44dp"
+        android:layout_marginEnd="124dp"
         android:text="Done"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/myRectangleView" />
+        app:layout_constraintTop_toBottomOf="@+id/pax4" />
 
     <TextView
         android:id="@+id/nameR"
         android:layout_width="150dp"
         android:layout_height="29sp"
-        android:layout_marginStart="3dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="7dp"
         android:textColor="#2196F3"
         android:textSize="18sp"
         app:layout_constraintStart_toEndOf="@+id/lbCIDate2"
-        app:layout_constraintTop_toBottomOf="@+id/imageView12" />
+        app:layout_constraintTop_toBottomOf="@+id/tvMsg" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

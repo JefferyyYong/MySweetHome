@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Reservation_History_Details2">
+
+    <View
+        android:id="@+id/myRectangleView"
+        android:layout_width="377dp"
+        android:layout_height="393dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="80dp"
+        android:background="@drawable/rectangle_view"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"></View>
+
+    <TextView
+        android:id="@+id/cod2"
+        android:layout_width="150dp"
+        android:layout_height="29sp"
+        android:layout_marginTop="12dp"
+        android:textColor="@color/red"
+        android:textSize="18sp"
+        app:layout_constraintStart_toEndOf="@+id/lbCODate"
+        app:layout_constraintTop_toBottomOf="@+id/cid2" />
+
+    <TextView
+        android:id="@+id/cid2"
+        android:layout_width="150dp"
+        android:layout_height="29sp"
+        android:layout_marginTop="12dp"
+        android:textColor="@color/red"
+        android:textSize="18sp"
+        app:layout_constraintStart_toEndOf="@+id/lbCIDate"
+        app:layout_constraintTop_toBottomOf="@+id/type3" />
+
+    <TextView
+        android:id="@+id/amount"
+        android:layout_width="150dp"
+        android:layout_height="29sp"
+        android:layout_marginTop="12dp"
+        android:textColor="@color/red"
+        android:textSize="18sp"
+        app:layout_constraintStart_toEndOf="@+id/lbAmountPaid"
+        app:layout_constraintTop_toBottomOf="@+id/cod2" />
+
+    <TextView
+        android:id="@+id/pax4"
+        android:layout_width="40sp"
+        android:layout_height="29sp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="12dp"
+        android:textColor="@color/red"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="@+id/myRectangleView"
+        app:layout_constraintHorizontal_bias="0.103"
+        app:layout_constraintStart_toEndOf="@+id/lbCIDate5"
+        app:layout_constraintTop_toBottomOf="@+id/phoneNo" />
+
+    <TextView
+        android:id="@+id/phoneNo"
+        android:layout_width="150dp"
+        android:layout_height="29sp"
+        android:layout_marginTop="12dp"
+        android:textColor="@color/red"
+        android:textSize="18sp"
+        app:layout_constraintStart_toEndOf="@+id/lbCIDate3"
+        app:layout_constraintTop_toBottomOf="@+id/nameR" />
+
+    <TextView
+        android:id="@+id/type3"
+        android:layout_width="100sp"
+        android:layout_height="29sp"
+        android:layout_marginTop="12dp"
+        android:textColor="@color/red"
+        android:textSize="15sp"
+        app:layout_constraintStart_toEndOf="@+id/lbCIDate4"
+        app:layout_constraintTop_toBottomOf="@+id/phoneNo" />
+
+    <TextView
+        android:id="@+id/lbCIDate5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="12dp"
+        android:text="Pax:"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        app:layout_constraintStart_toEndOf="@+id/type3"
+        app:layout_constraintTop_toBottomOf="@+id/phoneNo" />
+
+    <TextView
+        android:id="@+id/lbCIDate4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:text="Room Type:"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        app:layout_constraintStart_toStartOf="@+id/myRectangleView"
+        app:layout_constraintTop_toBottomOf="@+id/lbCIDate3" />
+
+    <TextView
+        android:id="@+id/lbCIDate3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="12dp"
+        android:text="Phone No:"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        app:layout_constraintStart_toStartOf="@+id/myRectangleView"
+        app:layout_constraintTop_toBottomOf="@+id/lbCIDate2" />
+
+    <TextView
+        android:id="@+id/lbCIDate2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:text="Name:"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        app:layout_constraintStart_toStartOf="@+id/myRectangleView"
+        app:layout_constraintTop_toBottomOf="@+id/imageView12" />
+
+    <ImageView
+        android:id="@+id/imageView12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="136dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/myRectangleView"
+        app:srcCompat="@drawable/bed_icon" />
+
+    <TextView
+        android:id="@+id/tvMsg"
+        android:layout_width="300dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="32dp"
+        android:text="Reservation Details"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="28dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/lbCODate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:text="Check-out Date:"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        app:layout_constraintStart_toStartOf="@+id/myRectangleView"
+        app:layout_constraintTop_toBottomOf="@+id/lbCIDate" />
+
+    <TextView
+        android:id="@+id/lbCIDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="12dp"
+        android:text="Check-in Date:"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        app:layout_constraintStart_toStartOf="@+id/myRectangleView"
+        app:layout_constraintTop_toBottomOf="@+id/lbCIDate4" />
+
+    <TextView
+        android:id="@+id/lbAmountPaid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:text="Amount Paid:"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        app:layout_constraintStart_toStartOf="@+id/myRectangleView"
+        app:layout_constraintTop_toBottomOf="@+id/lbCODate" />
+
+    <Button
+        android:id="@+id/doneBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Done"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/myRectangleView" />
+
+    <TextView
+        android:id="@+id/nameR"
+        android:layout_width="150dp"
+        android:layout_height="29sp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="16dp"
+        android:textColor="@color/red"
+        android:textSize="18sp"
+        app:layout_constraintStart_toEndOf="@+id/lbCIDate2"
+        app:layout_constraintTop_toBottomOf="@+id/imageView12" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

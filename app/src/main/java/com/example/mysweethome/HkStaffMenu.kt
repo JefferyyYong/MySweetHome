@@ -13,7 +13,7 @@ class HkStaffMenu : AppCompatActivity() {
         setContentView(R.layout.housekeeping_staff_menu)
         val staffName = findViewById<TextView>(R.id.staffName)
         setTitle("Staff Menu");
-        staffName.setText("John")
+        staffName.setText(intent.getStringExtra("HKS1").toString())
         //Staff
 
         val toLostFound = findViewById<ImageView>(R.id.imgViewLostFound)

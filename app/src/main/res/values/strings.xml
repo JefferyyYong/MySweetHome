@@ -63,5 +63,7 @@
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <string name="welcome">Welcome,</string>
 
+    <string name="reservation_details"><u>Reservation Details</u></string>
+
 
 </resources>

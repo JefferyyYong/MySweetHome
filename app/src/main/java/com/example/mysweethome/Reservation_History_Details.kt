@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.widget.EditText
 import android.widget.ImageButton
 import android.widget.TextView
+import androidx.appcompat.app.ActionBar
 import com.google.firebase.database.*
 
 class Reservation_History_Details : AppCompatActivity() {
@@ -23,6 +24,13 @@ class Reservation_History_Details : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_reservation__history)
 
+        //ToolBars
+        supportActionBar!!.setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM)
+        supportActionBar!!.setCustomView(R.layout.action_bar_layout)
+
+        var title = findViewById<TextView>(R.id.tvTittle)
+        title.text = "Reservation History"
+
         name3 =findViewById(R.id.name2)
         email3 =findViewById(R.id.email2)
         phoneNo3 =findViewById(R.id.no)
@@ -34,8 +42,6 @@ class Reservation_History_Details : AppCompatActivity() {
 
         val searchB = findViewById<ImageButton>(R.id.searchBtn4)
         rId = findViewById(R.id.searchT)
-
-
 
         searchB.setOnClickListener {
             search()
@@ -60,6 +66,11 @@ class Reservation_History_Details : AppCompatActivity() {
             startActivity(intent)
         }
 
+    }
+    //back button
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return true
     }
 
     private fun search() {

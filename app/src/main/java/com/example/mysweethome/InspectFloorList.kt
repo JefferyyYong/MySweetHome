@@ -6,57 +6,62 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Button
-import android.widget.EditText
-import android.widget.TextView
+import android.widget.ListView
 import com.google.firebase.database.*
 
-class AdminTaskList : AppCompatActivity() {
+class InspectFloorList : AppCompatActivity() {
+    lateinit var listView: ListView
+    lateinit var ifList: MutableList<InspectionFloor>
     lateinit var ref: DatabaseReference
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.admin_task_list)
-
-        val iName = findViewById<EditText>(R.id.sIName)
-        val oName = findViewById<TextView>(R.id.sName)
-        val floor = findViewById<TextView>(R.id.sFloor)
-        val desc = findViewById<TextView>(R.id.sDescrip)
-        val done = findViewById<Button>(R.id.done)
-        val search = findViewById<Button>(R.id.rSearch)
+        setContentView(R.layout.inspect_floor_list)
 
         //back button
         val actionbar = supportActionBar
         //back button
-        actionbar!!.title = "Task Allocation"
+        actionbar!!.title = "Inspection Floor List"
         actionbar.setDisplayHomeAsUpEnabled(true)
 
-        search.setOnClickListener {
-            ref = FirebaseDatabase.getInstance().getReference().child("taskTable").child(iName.text.toString())
-            ref.addValueEventListener(object : ValueEventListener {
-                //proRef.addValueEventListener(object : ValueEventListener{
-                override fun onDataChange(dataS: DataSnapshot) {
-                    var data1 = dataS.child("staff").getValue().toString()
-                    var data2 = dataS.child("floorNo").getValue().toString()
-                    var data3 = dataS.child("description").getValue().toString()
-                    //val name3 = ds.child("roomType").getValue(DBReservation::class.java)
-                    //type.setText(name3.toString()
-                    oName.setText(data1)
-                    floor.setText(data2)
-                    desc.setText(data3)
-                }
-                override fun onCancelled(databaseError: DatabaseError) {
-                    //Don't ignore errors
-                }
-            })
-        }
+        //for database use
+        ifList = mutableListOf()
+        ref = FirebaseDatabase.getInstance().getReference("floorInspectionTable")
+        listView = findViewById(R.id.listview)
 
-        done.setOnClickListener {
-            val intent = Intent(this, AdminTask::class.java)
+        var btnBack = findViewById<Button>(R.id.btnBack)
+
+        btnBack.setOnClickListener {
+            val intent = Intent(this, InspectMenu::class.java)
             startActivity(intent)
         }
 
+        //To read value from firebase
+        ref.addValueEventListener(object: ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+                //The DataSnapshot will contain all the lostfound store in the database
+
+                //Need to check if there is data in the database
+                if(snapshot!!.exists()){
+                    for(h in snapshot.children){
+                        val ifloor = h.getValue(InspectionFloor::class.java)
+                        ifList.add(ifloor!!)
+                    }
+
+                    val adapter = InspectionFloorAdapter(applicationContext, R.layout.inspect_floor_listview, ifList)
+                    listView.adapter = adapter
+                    //this.setAdapter(adapter)
+                }
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+            }
+
+        });
 
     }
 
+    //outside onCreate
     //Side menu
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         menuInflater.inflate(R.menu.menu_2, menu)
@@ -89,7 +94,7 @@ class AdminTaskList : AppCompatActivity() {
         }
     }
 
-    //Back button
+    //back button
     override fun onSupportNavigateUp(): Boolean {
         onBackPressed()
         return true

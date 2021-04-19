@@ -93,6 +93,13 @@ class InspectFloor : AppCompatActivity() {
             }*/
         }
 
+        var btnList = findViewById<Button>(R.id.btnList)
+
+        btnList.setOnClickListener {
+            val intent = Intent(this, InspectFloorList::class.java)
+            startActivity(intent)
+        }
+
         val toSubmit = findViewById<Button>(R.id.btnSubmit)
 
         toSubmit.setOnClickListener {

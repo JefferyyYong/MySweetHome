@@ -22,10 +22,9 @@
         android:layout_width="157dp"
         android:layout_height="31dp"
         android:layout_marginTop="12dp"
-        android:layout_marginEnd="344dp"
         android:textColor="@color/black"
         android:textSize="25sp"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView46"
         app:layout_constraintTop_toBottomOf="@+id/type2" />
 
     <ImageView
@@ -55,7 +54,7 @@
         android:layout_width="157dp"
         android:layout_height="31dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="124dp"
+        android:layout_marginEnd="60dp"
         android:textColor="@color/black"
         android:textSize="25sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -87,8 +86,6 @@
         android:text="Check out Date :"
         android:textColor="@color/black"
         android:textSize="25sp"
-        app:layout_constraintEnd_toStartOf="@+id/checkOut2"
-        app:layout_constraintHorizontal_bias="0.023"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView45" />
 
@@ -110,10 +107,9 @@
         android:layout_width="157dp"
         android:layout_height="31dp"
         android:layout_marginTop="12dp"
-        android:layout_marginEnd="336dp"
         android:textColor="@color/black"
         android:textSize="25sp"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView39"
         app:layout_constraintTop_toBottomOf="@+id/textView34" />
 
     <TextView
@@ -125,8 +121,6 @@
         android:text="Customer Name : "
         android:textColor="@color/black"
         android:textSize="25sp"
-        app:layout_constraintEnd_toStartOf="@+id/cName1"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView34" />
 

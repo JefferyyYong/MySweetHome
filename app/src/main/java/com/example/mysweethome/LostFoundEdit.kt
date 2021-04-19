@@ -80,9 +80,9 @@ class LostFoundEdit : AppCompatActivity() {
         val day = c.get(Calendar.DAY_OF_MONTH)
 
         lfDate.setOnClickListener {
-            val dpd = DatePickerDialog(this, DatePickerDialog.OnDateSetListener { view, year, monthOfYear, dayOfMonth ->
+            val dpd = DatePickerDialog(this, DatePickerDialog.OnDateSetListener { view, year, month, day ->
                 // Display Selected date in TextView
-                lfDate.setText("" + dayOfMonth + "/" + month + "/" + year)
+                lfDate.setText("" + day + "/" + (month+1) + "/" + year)
             }, year, month, day)
             dpd.show()
         }
@@ -97,6 +97,7 @@ class LostFoundEdit : AppCompatActivity() {
             //set the retrieved spinner data
             sStatus.setSelection(arrayAdapter.getPosition(edit_status))
 
+            /*
             sStatus.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
                 override fun onItemSelected(
                     parent: AdapterView<*>,
@@ -111,7 +112,7 @@ class LostFoundEdit : AppCompatActivity() {
                 override fun onNothingSelected(parent: AdapterView<*>) {
                     // Code to perform some action when nothing is selected
                 }
-            }
+            }*/
         }
 
 
@@ -130,7 +131,7 @@ class LostFoundEdit : AppCompatActivity() {
             val item = etItem.text.toString()
             val status = spinnerStatus.getSelectedItem().toString()
 
-            tryUpdate(id, date, location, item, status)
+            updateLF(id, date, location, item, status)
 
             /*
             selected.addListenerForSingleValueEvent(object: ValueEventListener{
@@ -151,9 +152,52 @@ class LostFoundEdit : AppCompatActivity() {
             val intent = Intent(this, LostFoundTable::class.java)
             startActivity(intent)*/
         }
+
+        val toDelete = findViewById<Button>(R.id.btnDelete)
+
+        toDelete.setOnClickListener {
+            //Toast.makeText(applicationContext, edit_row, Toast.LENGTH_LONG).show()
+
+            id = edit_id
+            val date = etDate.text.toString()
+            val location = etLocation.text.toString()
+            val item = etItem.text.toString()
+            val status = spinnerStatus.getSelectedItem().toString()
+
+            //delete(id, date, location, item, status)
+
+
+            val ref = FirebaseDatabase.getInstance().getReference().child("lostFoundTable").child(intent.getStringExtra("selected_id").toString())
+            ref.removeValue()
+            Toast.makeText(applicationContext,"Deleted successfully!",Toast.LENGTH_LONG).show()
+
+            val intent = Intent(this, LostFoundTable::class.java)
+            startActivity(intent)
+
+
+            /*
+            selected.addListenerForSingleValueEvent(object: ValueEventListener{
+                override fun onDataChange(snapshot: DataSnapshot) {
+                    for (lfSnapshot in snapshot.children){
+                        //val current_id = lfSnapshot.child("id").value.toString()
+                        val selectedRow = ref.child("lostFoundTable").orderByChild("id").equalTo(edit_row)
+                        tryUpdate(selectedRow)
+                    }
+                }
+
+                override fun onCancelled(error: DatabaseError) {
+                    TODO("Not yet implemented")
+                }
+            })
+            //var lf =
+
+            val intent = Intent(this, LostFoundTable::class.java)
+            startActivity(intent)*/
+        }
+
     }
 
-    private fun tryUpdate(id: String, date: String, location: String, item: String, status: String) {
+    private fun updateLF(id: String, date: String, location: String, item: String, status: String) {
         //private fun tryUpdate(query:Query){
         val theRef = ref.child(id)
 

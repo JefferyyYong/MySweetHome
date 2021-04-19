@@ -7,18 +7,6 @@
     tools:context=".RoomStatus">
 
     <TextView
-        android:id="@+id/textView9"
-        android:layout_width="160dp"
-        android:layout_height="43dp"
-        android:layout_marginTop="24dp"
-        android:text="Room No:"
-        android:textAlignment="center"
-        android:textColor="@color/black"
-        android:textSize="30sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView21" />
-
-    <TextView
         android:id="@+id/textView21"
         android:layout_width="303dp"
         android:layout_height="44dp"
@@ -36,39 +24,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/roomNo"
-        android:layout_width="120sp"
-        android:layout_height="43dp"
-        android:layout_marginTop="24dp"
-        android:ems="10"
-        android:inputType="number"
-        android:textAlignment="textStart"
-        android:textColor="@color/black"
-        android:textSize="30sp"
-        app:layout_constraintStart_toEndOf="@+id/textView9"
-        app:layout_constraintTop_toBottomOf="@+id/textView21" />
-
-    <Button
-        android:id="@+id/nxtBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="24dp"
-        android:text="Next"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.142"
-        app:layout_constraintStart_toEndOf="@+id/roomNo"
-        app:layout_constraintTop_toBottomOf="@+id/textView21" />
-
     <ScrollView
-        android:layout_width="422dp"
-        android:layout_height="440dp"
-        android:layout_marginTop="40dp"
+        android:layout_width="408dp"
+        android:layout_height="667dp"
+        android:translationY="70sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/roomNo">
+        app:layout_constraintTop_toBottomOf="@+id/textView21">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -174,13 +137,34 @@
                 android:textSize="20sp" />
 
             <TextView
+                android:id="@+id/label6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:textSize="25sp" />
+
+            <TextView
+                android:id="@+id/label8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:textSize="25sp" />
+
+            <TextView
                 android:id="@+id/label5"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textAlignment="center" />
 
             <TextView
-                android:id="@+id/label6"
+                android:id="@+id/label7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:textSize="25sp" />
+
+            <TextView
+                android:id="@+id/label"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textAlignment="center"

@@ -11,11 +11,11 @@
         android:id="@+id/imgViewLostFound"
         android:layout_width="172dp"
         android:layout_height="177dp"
-        android:layout_marginBottom="128dp"
+        android:layout_marginBottom="28dp"
         android:contentDescription="@string/btn_lost_found"
         app:layout_constraintBottom_toTopOf="@+id/btnLogout"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.499"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/btn_lost_found" />
 
@@ -25,7 +25,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="152dp"
         android:layout_marginEnd="153dp"
-        android:layout_marginBottom="100dp"
+        android:layout_marginBottom="16dp"
         android:background="@drawable/rounded_corners"
         android:text="@string/log_out"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
@@ -41,26 +41,27 @@
         android:id="@+id/tvWelcome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="40dp"
+        android:layout_marginStart="212dp"
         android:text="Welcome,"
         android:textColor="@color/black"
         android:textSize="30sp"
         app:layout_constraintBottom_toTopOf="@+id/imgViewLostFound"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.25"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.598" />
 
     <TextView
         android:id="@+id/staffName"
         android:layout_width="150sp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="40dp"
         android:textColor="@color/black"
         android:textSize="30sp"
         app:layout_constraintBottom_toTopOf="@+id/imgViewLostFound"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/tvWelcome" />
+        app:layout_constraintHorizontal_bias="0.06"
+        app:layout_constraintStart_toEndOf="@+id/tvWelcome"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.598" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

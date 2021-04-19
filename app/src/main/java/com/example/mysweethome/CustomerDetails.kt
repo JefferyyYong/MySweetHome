@@ -49,25 +49,7 @@ class CustomerDetails : AppCompatActivity() {
             val arrayAdapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, personNames)
             sSpinner.adapter = arrayAdapter
 
-            sSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-                override fun onItemSelected(
-                    parent: AdapterView<*>,
-                    view: View,
-                    position: Int,
-                    id: Long
-                ) {
-                    Toast.makeText(
-                        this@CustomerDetails,
-                        getString(R.string.selected_item) + " " + personNames[position],
-                        Toast.LENGTH_SHORT
-                    ).show()
 
-                }
-
-                override fun onNothingSelected(parent: AdapterView<*>) {
-                    // Code to perform some action when nothing is selected
-                }
-            }
         }
 
         //customer_booking
